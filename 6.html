@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chapter 4</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";}
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+ /*A스탠딩/미니로이드 스탠딩*/
+    #Mminiroid {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid img{ width: 60%; height: auto;}
+    #Mminiroid1 {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid1 img{ width: 60%; height: auto;}
+
+    #AAAstanding{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;}
+    #AAAstanding img{ width: 60%; height: auto;}
+    #AAAstanding1{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding1 img{ width: 60%; height: auto;}
+    #AAAstanding2{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none;}
+    #AAAstanding2 img{ width: 60%; height: auto;}
+    #AAAstanding3{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding3 img{ width: 60%; height: auto;}
+    #AAAstanding4{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;}
+    #AAAstanding4 img{ width: 60%; height: auto;}
+    #AAAstanding5{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding5 img{ width: 60%; height: auto;}
+    #AAAstanding6{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none;}
+    #AAAstanding6 img{ width: 60%; height: auto;}
+    #AAAstanding7{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding7 img{ width: 60%; height: auto;}
+
+/*C스탠딩*/
+    #CCCstanding{position: absolute; cursor: pointer; top:9.5%;
+     right: -15%;  width: 50%; height:auto;display: none;}
+    #CCCstanding img{ width: 60%; height: auto;}
+    #CCCstanding1{position: absolute; cursor: pointer; top:9.5%;
+     right: -15%;  width: 50%; height:auto;display: none;}
+    #CCCstanding1 img{ width: 60%; height: auto;}
+    #CCCstanding2{position: absolute; cursor: pointer; top:9.5%;
+     right: -15%;  width: 50%; height:auto;display: none;}
+    #CCCstanding2 img{ width: 60%; height: auto;}
+    #CCCstanding3{position: absolute; cursor: pointer; top:9.5%;
+     right: -15%;  width: 50%; height:auto;display: none;}
+    #CCCstanding3 img{ width: 60%; height: auto;}
+
+
+/*미니 안드로이드/사람들*/
+   #miniroid {position: absolute; cursor: pointer; top:75%; left:5%;  animation:mainbg 1s alternate; width: 45%; height:auto; }
+   #miniroid img{ width: 35%; height: auto;}
+   #Rminiroid {position: absolute; cursor: pointer; top:75%; left:5%; width: 45%; height:auto; display: none;}
+   #Rminiroid img{ width: 35%;; height: auto;}
+
+   #people {position: absolute; cursor: pointer; top:20%; left:35%;  animation:mainbg 1s alternate; width: 70%; height:auto; display: none;}
+   #people img{ width: 30%; height: auto;}
+
+   /*사람들 화살표*/
+    #click{position: absolute; cursor: pointer; top:15%; left:42%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #click img{ width: 8%; height: auto;}
+
+
+/*망가진복도/복도*/
+ #mainstage{width: auto; height: 100%; animation:mainbg 0.5s alternate;}
+ #mainstage2{width: auto; height: 100%; animation:mainbg 0.5s alternate; cursor: pointer; display: none;}
+ #mainstage3{width: auto; height: 100%; animation:dip2 0.5s alternate; cursor: pointer; display: none;}
+ #mainstage4{width: auto; height: 100%; animation:dip 0.5s alternate; cursor: pointer; display: none;}
+ /*시작 전 대화박스 및 버튼*/
+  #startbox {position: absolute; bottom: 5%; left: 25%; animation:mainbg 1s alternate;}
+  #startbox img{ width: 70%; height: auto;}
+/*대화박스*/
+    #talk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #talk img{ width: 70%; height: auto;  }
+    #rtalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #rtalk img{ width: 70%; height: auto;  }
+    #Otalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #Otalk img{ width: 70%; height: auto;  }
+
+    #box{position: relative; margin: auto; width:1250px; height: auto; font-family: "neo";}
+
+/*로이드 따라 들어옴.*/
+ #outside {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";}
+ #outside1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+ #outside2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+ #outside3 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+ #outside4 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+ #outsidebutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;}
+ #outsidebutton img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton1 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton2 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton3 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton4 img {height: 25px; width: auto; cursor: pointer;}
+
+ /*싸우는 사람 클릭시*/
+#peopletext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext1 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext3 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext4 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext5 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext6 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext7 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext8 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext9 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext10 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext11 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext12 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext13 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext14 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext15 {bottom :7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext16 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext17 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext18 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext19 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+#peopletextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb1 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb2 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb3 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb4 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb5 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb6 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb7 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb8 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb9 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb9 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb10 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb10 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb11 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb11 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb12 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb12 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb13 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb13 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb14 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb14 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb15 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb15 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb16 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb16 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb17 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb17 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb18 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb18 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb19 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb19 img {height: 25px; width: auto; cursor: pointer;}
+
+/*다시 원래대로 화면 돌아온 후의 독백*/
+#dokback {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#dokback1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#dokback2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#dokback3 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#dokback4 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#dokback5 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+
+#dokbackbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#dokbackbb img {height: 25px; width: auto; cursor: pointer;}
+#dokbackbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#dokbackbb1 img {height: 25px; width: auto; cursor: pointer;}
+#dokbackbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#dokbackbb2 img {height: 25px; width: auto; cursor: pointer;}
+#dokbackbb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#dokbackbb3 img {height: 25px; width: auto; cursor: pointer;}
+#dokbackbb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#dokbackbb4 img {height: 25px; width: auto; cursor: pointer;}
+#dokbackbb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#dokbackbb5 img {height: 25px; width: auto; cursor: pointer;}
+
+/*C와의 대화*/
+#Ctiki {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki3 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki4 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki5 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki6 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki7 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki8 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki9 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki10 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki11 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki12 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki13 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki14 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki15 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki16 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki17 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#Ctiki18 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+#Ctikibb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb1 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb2 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb3 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb4 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb5 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb6 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb7 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb8 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb9 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb9 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb10 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb10 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb11 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb11 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb12 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb12 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb13 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb13 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb14 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb14 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb15 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb15 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb16 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb16 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb17 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb17 img {height: 25px; width: auto; cursor: pointer;}
+#Ctikibb18 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#Ctikibb18 img {height: 25px; width: auto; cursor: pointer;}
+
+/*구분선*/
+
+ @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+
+    @keyframes mainbg{
+      0%{opacity: 0;}
+      90%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes start{
+      0%{opacity: 1;}
+      50%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes tbox{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes dip{
+       0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes dip2{
+       0%{opacity: 0;}
+      100%{opacity: 0.5;}
+    }
+
+
+  /*챕터표시용*/
+   h1 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 30ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate;}
+  h3 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 25ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate; }
+
+  h4 { 
+  color: white;
+  width: 80ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3s steps(30, end),
+              step-end infinite alternate; z-index: 3;
+}
+  h5 { 
+  color:  white;
+   
+  width: 15ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 1s steps(15, end),
+             step-end infinite alternate; z-index: 3;
+}
+  /**/
+  </style> </head> 
+    <body>
+
+     <div id="box">
+     <iframe src="silence.mp3" allow="autoplay" id="audio/mpeg" style="display:none"></iframe>
+
+     <audio id="Mainbg">
+      <source src="./bgm/Aftermath.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="Mainbg1">
+      <source src="./bgm/Reaching Out.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+
+     <audio id="vip">
+      <source src="./bgm/vol.18_Track_5.wav" type="audio/wav"autoplay="true">
+     </audio>
+     <audio id="glitch">
+      <source src="./bgm/277053__doty21__glitch-sound-1.wav" type="audio/wav"autoplay="true">
+     </audio>
+     <audio id="barsory">
+      <source src="./bgm/구두 발자국-아스팔트.MP3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+      <audio id="marsory">
+      <source src="./bgm/카페 웅성웅성.mp3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+       <audio id="gidongum">
+      <source src="./bgm/Computer Error by ecfike Id-135125.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+
+      <h4 id="outside">(어디까지 가려는 거지?)</h4>
+      <h4 id="outside1">(아, 멈췄다.)</h4>
+      <h4 id="outside2">... ...</h4>
+      <h4 id="outside3">(연구소의 복도인가? 그러고보니 처음 이 미니로이드를 마주친 것도<br><br>연구소의 복도였지...)</h4>
+      <h4 id="outside4">(!)</h4>
+
+      <h4 id="peopletext">(연구원 두 사람이 대화를 하고 있는 것 같다.)</h4>
+      <h4 id="peopletext1">말이 돼!? 이제 이 지구에 감염된 사람보다 감염이 되지 않는 사람을<br><br>꼽는 쪽이 더 빠르겠어!!</h4>
+      <h4 id="peopletext2">조금만 더 힘내봐요 선배. 아주 진전이 없었던건 아니었잖아요.</h4>
+      <h4 id="peopletext3">... 아직 모르는구나. 너, 요근래 연구소 인원이 많이 줄었다는거<br><br>느끼지 않았어?</h4>
+      <h4 id="peopletext4">... ... 네?</h4>
+      <h4 id="peopletext5">상부에선 치료제 개발에도 슬슬 손을 뗄 것 같은 분위기야.</h4>
+      <h4 id="peopletext6">아니, 이미 진즉에 포기했던걸지도 모르지. 지금 빠진 인원들도<br><br>예전에 내가 말했던 다른 프로젝트 쪽으로 넘어간 것 같더라고.</h4>
+      <h4 id="peopletext7">다른 프로젝트요?</h4>
+      <h4 id="peopletext8">그래. N.A 프로젝트. 예전부터 암암리에 진행되고 있던 프로젝트라더라. </h4>
+      <h4 id="peopletext9">... N.A 프로젝트?</h4>
+      <h4 id="peopletext10">그래. 본론부터 말하자면 행성 이주계획이야.</h4>
+      <h4 id="peopletext11">예전부터 과학잡지나, 뭐... 너도 연구원이니까 지금 지구가 말라가고<br><br>있다는 것 정도는 알고 있잖아?</h4>
+      <h4 id="peopletext12">비단 환경이나 자원고갈만의 문제가 아니라. 환경 자체의 변화로 인한<br><br>재해나 그런 것들로 인해서. 그래서 진즉에 준비하고 있었다고 하더라고.</h4>
+      <h4 id="peopletext13">지구와 환경이 유사한 대체행성을 찾기 위한 프로젝트.<br><br>성경의 노아의 방주(Noah's Ark)에서 따온 아주 거창한 이름을 붙이셨다지.</h4>
+      <h4 id="peopletext14">...뭐, 아직은 이르지만 일이 이렇게 되어서 그런가,<br><br>완전히 감염되지 않은 인구만을 데리고 지구를 떠날 생각인가봐.</h4>
+      <h4 id="peopletext15">잠,깐만요. 그럼 격리 구역에 있는 사람들은요?<br><br>아직 감염되지 않은 사람들도 있을텐데...</h4>
+      <h4 id="peopletext16">...아마 버리고 가겠지. 치료제도 개발되지 않은 전염병이야.<br><br> 혹시나 속이고 있다거나 감염위험군이면 어떡해.</h4>
+      <h4 id="peopletext17">... ... 그런.</h4>
+      <h4 id="peopletext18">(저 멀리서 tv뉴스 소리가 들려온다. 알음 알음 들리기로는 연구원들의<br><br>백신 연구에 진전이 있다는 제법 희망적인 내용이었다.)</h4>
+      <h4 id="peopletext19">... ...</h4>
+
+      <h4 id="dokback">잠깐만. 그렇다면 그 상부가 버리고 갔다는건... ...</h4>
+      <h4 id="dokback1">무엇보다도 N.A프로젝트의 시초는...</h4>
+      <h4 id="dokback2">... ...하</h4>
+      <h4 id="dokback3">웃기지도 않아. 그런식으로 얼마나 많은 사람들을...</h4>
+      <h4 id="dokback4">생각해보면 지금의 이브도 결국 비슷한 일을 하고 있는 셈이네.<br><br>전염병만 없다 뿐이지.</h4>
+      <h4 id="dokback5">그렇지. 재미있지 않니? 시기만 달랐다 뿐이지 결국 같은 일을<br><br> 반복한다는게.</h4>
+
+      <h4 id="Ctiki">... ...! 당신... C씨?</h4>
+      <h4 id="Ctiki1">오랜만이야, A. 많이 컸네. 마지막으로 봤을때가 꼬맹이었는데.</h4>
+      <h4 id="Ctiki2">아니, 하지만 당신은... 분명 아주 옛날에...</h4>
+      <h4 id="Ctiki3">뭐. 이브의 사람들은 워낙 의료기술이 발달해서 수명이 비약적으로<br><br>늘었잖아? 다시 만나서 기쁘지 않은가봐?</h4>
+      <h4 id="Ctiki4">그런 의미가 아니라... 당신 분명 N.A프로젝트에... 아!</h4>
+      <h4 id="Ctiki5"> 후후, 그래. N.A프로젝트 덕분에 나는 아주 오래 전에 내 동료들과<br><br>이 지구에 도착했었어.</h4>
+      <h4 id="Ctiki6">그리고 남겨진 기록들을 더듬어가면서 너처럼 이곳에 있었던 일들을<br><br>하나씩 알아가게 되었고.</h4>
+      <h4 id="Ctiki7">...끝에선 우리는 선택해야했어.</h4>
+      <h4 id="Ctiki8">운이 좋았지. 함께한 사람들이 나와 비슷한 사람들이었거든.</h4>
+      <h4 id="Ctiki9">우리는... 알게된 모든 것들을 비밀로 하고 지구에 남기로 한거야.</h4>
+      <h4 id="Ctiki10">지금의 N.A프로젝트의 방식을 자세히는 알지 못하지만...<br><br>대략적으론 들어오는 정보가 있으니 알아. 우리때와는 다를거야.</h4>
+      <h4 id="Ctiki11">우리 때는 각각의 팀으로 나눠서 소형 우주선으로 이브에서 관측된<br><br>여러 예비대체 행성으로 각각 가도록 되어있었어.</h4>
+      <h4 id="Ctiki12">아마 그래서 그런지 실종율도 많아. 우주는 아주 광활하고 어떤 일이<br><br>일어나도 모를테지.</h4>
+      <h4 id="Ctiki13">아무튼 우리는 거짓보고를 올리고 우주선에 구비되어있는 장비들로<br><br>지구에서 생활하기 시작한거야.</h4>
+      <h4 id="Ctiki14">그렇게 해서라도 이 행성을 알리고 싶지 않았어. 또다시 과오가<br><br>반복될거라 생각했거든.</h4>
+      <h4 id="Ctiki15">... ... 그렇게 간단히 말할 부분이에요?</h4>
+      <h4 id="Ctiki16">구구절절 말하기엔 좀 그렇잖아? 그런 이야기가 있었다 정도면 되니까.</h4>
+      <h4 id="Ctiki17">자, 그리고 보여줄게 있어. 할 말도 많고.</h4>
+      <h4 id="Ctiki18">그러니까... ...</h4>
+
+    <div id="mainstage">
+    <center>
+    <img src="./img/망가진 후반 연구소.jpg">
+    </center>
+    </div>
+
+    <div id="mainstage2">
+    <img src="./img/후반 연구소.jpg">
+    </div>
+
+    <div id="mainstage3">
+    <img src="./img/노이즈.png">
+    </div>
+
+    <div id="mainstage4">
+    <img src="./img/노이즈.png">
+    </div>
+    
+
+    <div id="people">
+    <img src="./img/싸우는인간둘.png">
+   </div>
+   <div id="miniroid">
+    <img src="./img/미이니로이드.png">
+  </div>
+    <div id="Rminiroid">
+    <img src="./img/켜진미니로이드.png">
+  </div>
+
+  <div id="click">
+    <img src="./img/화살표(아래).png">
+    </div>
+
+    <div id="AAAstanding">
+        <img src="./img/A우주복(당황).png">
+    </div>
+    <div id="AAAstanding1">
+        <img src="./img/A우주복(진지).png">
+    </div>
+    <div id="AAAstanding2">
+        <img src="./img/A우주복(평소).png">
+    </div>
+    <div id="AAAstanding3">
+        <img src="./img/A우주복(화남).png">
+    </div>
+    <div id="AAAstanding4">
+        <img src="./img/AA우주복(당황).png">
+    </div>
+    <div id="AAAstanding5">
+        <img src="./img/AA우주복(진지).png">
+    </div>
+    <div id="AAAstanding6">
+        <img src="./img/AA우주복(평소).png">
+    </div>
+    <div id="AAAstanding7">
+        <img src="./img/AA우주복(화남).png">
+    </div>
+
+    <div id="CCCstanding">
+        <img src="./img/연구원C노이즈.png">
+    </div>
+    <div id="CCCstanding1">
+        <img src="./img/연구원CC노이즈.png">
+    </div>
+    <div id="CCCstanding2">
+        <img src="./img/연구원C.png">
+    </div>
+    <div id="CCCstanding3">
+        <img src="./img/연구원CC.png">
+    </div>
+
+    <div id="Mminiroid">
+        <img src="./img/miniroidd.png">
+    </div>
+    <div id="Mminiroid1">
+        <img src="./img/miniroidd2.png">
+    </div>
+
+     <div id="startbox">
+    <img src="./img/대화창(왼).png">
+    </div>
+
+    <div id="talk">
+    <img src="./img/대화창(오).png">
+    </div>
+    <div id="rtalk">
+    <img src="./img/대화창(왼).png">
+    </div>
+    <div id="Otalk">
+    <img src="./img/대화창(완).png">
+     </div>
+
+    <div id="outsidebutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="peopletextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb3">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb4">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb5">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb6">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb7">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb8">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb9">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb10">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb11">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb12">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb13">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb14">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb15">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb16">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb17">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb18">
+    <img src="./img/버튼(오).png">
+    </div>
+     <div id="peopletextbb19">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="dokbackbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="dokbackbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="dokbackbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="dokbackbb3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="dokbackbb4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="dokbackbb5">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="Ctikibb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb8">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb9">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb10">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb11">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb12">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb13">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb14">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb15">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb16">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb17">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="Ctikibb18">
+  <a href="7.html">  <img src="./img/버튼(오).png">
+    </div></a>
+
+</div>
+
+    <script type="text/javascript">
+      
+
+     var toggle = "off";
+      var clickNumber = 0;
+      outsidebutton.onclick = function(){
+      Mainbg.play();
+      barsory.play();
+      toggle = "on";
+      AAAstanding.style.display = "inline";
+      outside.style.display = "none";
+      outsidebutton.style.display = "none";
+      outside1.style.display = "inline";
+      outsidebutton1.style.display = "inline";
+      }
+
+      outsidebutton1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside1.style.display = "none";
+      outsidebutton1.style.display = "none";
+      startbox.style.display = "none";
+      talk.style.display = "inline"
+      AAAstanding.style.display = "none";
+      AAAstanding4.style.display = "inline";
+      Mminiroid.style.display = "inline";
+      outside2.style.display = "inline";
+      outsidebutton2.style.display = "inline";
+      }
+      outsidebutton2.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside2.style.display = "none";
+      outsidebutton2.style.display = "none";
+      AAAstanding4.style.display = "none";
+      AAAstanding1.style.display = "inline"
+      Mminiroid.style.display = "none";
+      Mminiroid1.style.display = "inline";
+      outside3.style.display = "inline";
+      outsidebutton3.style.display = "inline";
+      }
+      outsidebutton3.onclick = function(){
+      gidongum.play();
+      toggle = "on";
+      outside3.style.display = "none";
+      outsidebutton3.style.display = "none";
+      rtalk.style.display = "none";
+      talk.style.display = "inline"
+      AAAstanding4.style.display = "inline"
+      AAAstanding1.style.display = "none";
+      Mminiroid.style.display = "inline";
+      Mminiroid1.style.display = "none";
+      miniroid.style.display = "none";
+      Rminiroid.style.display = "inline";
+      outside4.style.display = "inline";
+      outsidebutton4.style.display = "inline";
+      }
+
+      outsidebutton4.onclick = function(){
+      toggle = "on";
+      outside4.style.display = "none";
+      outsidebutton4.style.display = "none";
+      AAAstanding4.style.display =  "none";
+      Mminiroid.style.display = "none";
+      talk.style.display = "none";
+      click.style.display = "inline";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      people.style.display = "inline";
+      }
+
+      click.onclick = function(){
+      marsory.play();
+      toggle = "on";
+      click.style.display = "none";
+      peopletext.style.display = "inline";
+      peopletextbb.style.display = "inline";
+      rtalk.style.display = "inline";
+      AAAstanding1.style.display = "inline";
+    }
+
+      people.onclick = function(){
+      marsory.play();
+      toggle = "on";
+      click.style.display = "none";
+      peopletext.style.display = "inline";
+      peopletextbb.style.display = "inline";
+      rtalk.style.display = "inline";
+      AAAstanding1.style.display = "inline";
+    }
+
+      peopletextbb.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext.style.display = "none";
+      peopletextbb.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      AAAstanding5.style.display = "none";
+      peopletext1.style.display = "inline";
+      peopletextbb1.style.display = "inline";
+    }
+      peopletextbb1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext1.style.display = "none";
+      peopletextbb1.style.display = "none";
+      peopletext2.style.display = "inline";
+      peopletextbb2.style.display = "inline";
+    }
+      peopletextbb2.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext2.style.display = "none";
+      peopletextbb2.style.display = "none";
+      peopletext3.style.display = "inline";
+      peopletextbb3.style.display = "inline";
+    }
+      peopletextbb3.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext3.style.display = "none";
+      peopletextbb3.style.display = "none";
+      peopletext4.style.display = "inline";
+      peopletextbb4.style.display = "inline";
+    }
+      peopletextbb4.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext4.style.display = "none";
+      peopletextbb4.style.display = "none";
+      peopletext5.style.display = "inline";
+      peopletextbb5.style.display = "inline";
+    }
+      peopletextbb5.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext5.style.display = "none";
+      peopletextbb5.style.display = "none";
+      peopletext6.style.display = "inline";
+      peopletextbb6.style.display = "inline";
+    }
+      peopletextbb6.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext6.style.display = "none";
+      peopletextbb6.style.display = "none";
+      peopletext7.style.display = "inline";
+      peopletextbb7.style.display = "inline";
+    }
+      peopletextbb7.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext7.style.display = "none";
+      peopletextbb7.style.display = "none";
+      peopletext8.style.display = "inline";
+      peopletextbb8.style.display = "inline";
+    }
+      peopletextbb8.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext8.style.display = "none";
+      peopletextbb8.style.display = "none";
+      peopletext9.style.display = "inline";
+      peopletextbb9.style.display = "inline";
+    }
+      peopletextbb9.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext9.style.display = "none";
+      peopletextbb9.style.display = "none";
+      peopletext10.style.display = "inline";
+      peopletextbb10.style.display = "inline";
+    }
+      peopletextbb10.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext10.style.display = "none";
+      peopletextbb10.style.display = "none";
+      peopletext11.style.display = "inline";
+      peopletextbb11.style.display = "inline";
+    }
+      peopletextbb11.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext11.style.display = "none";
+      peopletextbb11.style.display = "none";
+      peopletext12.style.display = "inline";
+      peopletextbb12.style.display = "inline";
+    }
+      peopletextbb12.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext12.style.display = "none";
+      peopletextbb12.style.display = "none";
+      peopletext13.style.display = "inline";
+      peopletextbb13.style.display = "inline";
+    }
+
+      peopletextbb13.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext13.style.display = "none";
+      peopletextbb13.style.display = "none";
+      peopletext14.style.display = "inline";
+      peopletextbb14.style.display = "inline";
+    }
+      peopletextbb14.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext14.style.display = "none";
+      peopletextbb14.style.display = "none";
+      peopletext15.style.display = "inline";
+      peopletextbb15.style.display = "inline";
+    }
+      peopletextbb15.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext15.style.display = "none";
+      peopletextbb15.style.display = "none";
+      peopletext16.style.display = "inline";
+      peopletextbb16.style.display = "inline";
+    }
+
+      peopletextbb16.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext16.style.display = "none";
+      peopletextbb16.style.display = "none";
+      peopletext17.style.display = "inline";
+      peopletextbb17.style.display = "inline";
+    }
+      peopletextbb17.onclick = function(){
+      glitch.play();
+      toggle = "on";
+      peopletext17.style.display = "none";
+      peopletextbb17.style.display = "none";
+      peopletext18.style.display = "inline";
+      peopletextbb18.style.display = "inline";
+    }
+      peopletextbb18.onclick = function(){
+      glitch.pause();
+      vip.play();
+      toggle = "on";
+      peopletext18.style.display = "none";
+      peopletextbb18.style.display = "none";
+      Otalk.style.display = "none";
+      AAAstanding5.style.display = "none";
+      rtalk.style.display = "inline";
+      AAAstanding3.style.display = "inline";
+      peopletext19.style.display = "inline";
+      peopletextbb19.style.display = "inline";
+    }
+      peopletextbb19.onclick = function(){
+      glitch.pause();
+      gidongum.play();
+      toggle = "on";
+      peopletext19.style.display = "none";
+      peopletextbb19.style.display = "none";
+      mainstage.style.display = "inline";
+      mainstage2.style.display = "none";
+      people.style.display = "none";
+      Rminiroid.style.display = "none";
+      miniroid.style.display = "inline";
+      dokback.style.display = "inline";
+      dokbackbb.style.display = "inline";
+    }
+
+      dokbackbb.onclick = function(){
+      vip.play();
+      toggle = "on";
+      dokback.style.display = "none";
+      dokbackbb.style.display = "none";
+      dokback1.style.display = "inline";
+      dokbackbb1.style.display = "inline";
+    }
+      dokbackbb1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      dokback1.style.display = "none";
+      dokbackbb1.style.display = "none";
+      dokback2.style.display = "inline";
+      dokbackbb2.style.display = "inline";
+    }
+      dokbackbb2.onclick = function(){
+      vip.play();
+      toggle = "on";
+      dokback2.style.display = "none";
+      dokbackbb2.style.display = "none";
+      dokback3.style.display = "inline";
+      dokbackbb3.style.display = "inline";
+    }
+      dokbackbb3.onclick = function(){
+      vip.play();
+      toggle = "on";
+      dokback3.style.display = "none";
+      dokbackbb3.style.display = "none";
+      dokback4.style.display = "inline";
+      dokbackbb4.style.display = "inline";
+    }
+      dokbackbb4.onclick = function(){
+      vip.play();
+      Mainbg.pause();
+      Mainbg1.play();
+      toggle = "on";
+      AAAstanding3.style.display = "none";
+      AAAstanding5.style.display = "inline";
+      CCCstanding.style.display = "inline";
+      rtalk.style.display = "none";
+      talk.style.display = "inline";
+      dokback4.style.display = "none";
+      dokbackbb4.style.display ="none";
+      dokback5.style.display = "inline";
+      dokbackbb5.style.display = "inline";
+    }
+      dokbackbb5.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding3.style.display = "inline";
+      AAAstanding5.style.display = "none";
+      CCCstanding.style.display = "none";
+      CCCstanding1.style.display ="inline";
+      rtalk.style.display ="inline"; 
+      talk.style.display = "none";
+      dokback5.style.display = "none";
+      dokbackbb5.style.display ="none";
+      Ctiki.style.display = "inline";
+      Ctikibb.style.display = "inline";
+    }
+      Ctikibb.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding3.style.display = "inline";
+      AAAstanding5.style.display = "none";
+      CCCstanding2.style.display = "inline";
+      CCCstanding1.style.display = "none";
+      rtalk.style.display = "none";
+      talk.style.display = "inline"; 
+      Ctiki.style.display = "none";
+      Ctikibb.style.display = "none";
+      Ctiki1.style.display = "inline";
+      Ctikibb1.style.display = "inline";
+    }
+      Ctikibb1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding7.style.display = "inline";
+      AAAstanding3.style.display = "none";
+      CCCstanding3.style.display = "inline";
+      CCCstanding2.style.display = "none";
+      rtalk.style.display ="inline";
+      talk.style.display = "none"; 
+      Ctiki1.style.display = "none";
+      Ctikibb1.style.display = "none";
+      Ctiki2.style.display = "inline";
+      Ctikibb2.style.display = "inline";
+    }
+      Ctikibb1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding7.style.display = "inline";
+      AAAstanding3.style.display = "none";
+      CCCstanding3.style.display = "inline";
+      CCCstanding2.style.display = "none";
+      rtalk.style.display ="inline";
+      talk.style.display = "none"; 
+      Ctiki1.style.display = "none";
+      Ctikibb1.style.display = "none";
+      Ctiki2.style.display = "inline";
+      Ctikibb2.style.display = "inline";
+    }
+      Ctikibb2.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding7.style.display = "none";
+      AAAstanding3.style.display = "inline";
+      CCCstanding3.style.display = "none";
+      CCCstanding2.style.display = "inline";
+      rtalk.style.display = "none"; 
+      talk.style.display = "inline";
+      Ctiki2.style.display = "none";
+      Ctikibb2.style.display = "none";
+      Ctiki3.style.display = "inline";
+      Ctikibb3.style.display = "inline";
+    } 
+      Ctikibb3.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding7.style.display = "none";
+      AAAstanding3.style.display = "inline";
+      CCCstanding3.style.display = "inline"
+      CCCstanding2.style.display = "none";
+      rtalk.style.display ="inline"; 
+      talk.style.display = "none"; 
+      Ctiki3.style.display = "none";
+      Ctikibb3.style.display = "none";
+      Ctiki4.style.display = "inline";
+      Ctikibb4.style.display = "inline";
+    }
+      Ctikibb4.onclick = function(){
+      vip.play();
+      Mainbg1.play()
+      toggle = "on";
+      AAAstanding7.style.display = "inline";
+      AAAstanding3.style.display = "none";
+      CCCstanding3.style.display = "none";
+      CCCstanding2.style.display = "inline"
+      rtalk.style.display = "none"; 
+      talk.style.display = "inline";
+      Ctiki4.style.display = "none";
+      Ctikibb4.style.display = "none";
+      Ctiki5.style.display = "inline";
+      Ctikibb5.style.display = "inline";
+    }
+      Ctikibb5.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki5.style.display = "none";
+      Ctikibb5.style.display = "none";
+      Ctiki6.style.display = "inline";
+      Ctikibb6.style.display = "inline";
+    }
+      Ctikibb6.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki6.style.display = "none";
+      Ctikibb6.style.display = "none";
+      Ctiki7.style.display = "inline";
+      Ctikibb7.style.display = "inline";
+    }
+      Ctikibb7.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki7.style.display = "none";
+      Ctikibb7.style.display = "none";
+      Ctiki8.style.display = "inline";
+      Ctikibb8.style.display = "inline";
+    }
+      Ctikibb8.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki8.style.display = "none";
+      Ctikibb8.style.display = "none";
+      Ctiki9.style.display = "inline";
+      Ctikibb9.style.display = "inline";
+    }
+      Ctikibb9.onclick = function(){
+      vip.play();
+      Mainbg1.play()
+      toggle = "on";
+      Ctiki9.style.display = "none";
+      Ctikibb9.style.display = "none";
+      Ctiki10.style.display = "inline";
+      Ctikibb10.style.display = "inline";
+    }
+      Ctikibb10.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki10.style.display = "none";
+      Ctikibb10.style.display = "none";
+      Ctiki11.style.display = "inline";
+      Ctikibb11.style.display = "inline";
+    }
+      Ctikibb11.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki11.style.display = "none";
+      Ctikibb11.style.display = "none";
+      Ctiki12.style.display = "inline";
+      Ctikibb12.style.display = "inline";
+    }
+      Ctikibb12.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki12.style.display = "none";
+      Ctikibb12.style.display = "none";
+      Ctiki13.style.display = "inline";
+      Ctikibb13.style.display = "inline";
+    }
+      Ctikibb13.onclick = function(){
+      vip.play();
+      toggle = "on";
+      Ctiki13.style.display = "none";
+      Ctikibb13.style.display = "none";
+      Ctiki14.style.display = "inline";
+      Ctikibb14.style.display = "inline";
+    }
+      Ctikibb14.onclick = function(){
+      vip.play();
+      Mainbg1.play()
+      toggle = "on";
+      AAAstanding7.style.display = "none";
+      AAAstanding3.style.display = "inline";
+      CCCstanding3.style.display = "inline"
+      CCCstanding2.style.display = "none";
+      rtalk.style.display ="inline"; 
+      talk.style.display = "none"; 
+      Ctiki14.style.display = "none";
+      Ctikibb14.style.display = "none";
+      Ctiki15.style.display = "inline";
+      Ctikibb15.style.display = "inline";
+    }
+      Ctikibb15.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding7.style.display = "inline";
+      AAAstanding3.style.display = "none";
+      CCCstanding3.style.display = "none";
+      CCCstanding2.style.display = "inline";
+      rtalk.style.display ="none";  
+      talk.style.display = "inline";
+      Ctiki15.style.display = "none";
+      Ctikibb15.style.display = "none";
+      Ctiki16.style.display = "inline";
+      Ctikibb16.style.display = "inline";
+    }
+      Ctikibb16.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding7.style.display = "inline";
+      AAAstanding3.style.display = "none";
+      CCCstanding2.style.display = "none";
+      CCCstanding.style.display = "inline";
+      rtalk.style.display ="none";  
+      talk.style.display = "inline";
+      mainstage.style.display ="none";
+      miniroid.style.display ="none";
+      mainstage3.style.display = "inline";
+      miniroid.style.display = "none";
+      Ctiki16.style.display = "none";
+      Ctikibb16.style.display = "none";
+      Ctiki17.style.display = "inline";
+      Ctikibb17.style.display = "inline";
+    }
+      Ctikibb17.onclick = function(){
+      vip.play();
+      toggle = "on";
+      AAAstanding7.style.display = "inline";
+      AAAstanding3.style.display = "none";
+      CCCstanding3.style.display = "none";
+      CCCstanding.style.display = "inline";
+      rtalk.style.display ="none";  
+      talk.style.display = "inline";
+      mainstage3.style.display ="none"; 
+      mainstage4.style.display = "inline";
+      Ctiki17.style.display = "none";
+      Ctikibb17.style.display = "none";
+      Ctiki18.style.display = "inline";
+      Ctikibb18.style.display = "inline";
+    }
+
+
+
+
+
+      </script>
+
+</body>
+</html>

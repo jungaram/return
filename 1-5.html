@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>prolog</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";} 
+
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+    #tree { position: absolute; top: -30%; left: 13%; width: auto; height: 100%; animation: error 2s alternate; display:none; z-index: -2;}
+    #tree img {width: 250%; height: auto; }
+
+
+
+    /*설명용 이미지 인류가~ 했다고 전해지지만*/
+     #bar{ position: absolute; top: 5%; left: 25%; width: auto; height: 100%; animation: eve 2s alternate; display:none; }
+    #bar img{width: 70%; height: auto; }
+
+    #bar22 { position: absolute; top: 10%; right: 15%; width: auto; height: 100%; animation: eve 2s alternate; display:none; }
+    #bar22 img{width: 70%; height: auto; }
+
+    /*재앙은 이후 멸망전 멸망후 그림*/
+    #pastapo { position: absolute; top: 5%; left: 28%; width: auto; height: 100%; animation: eve 2s alternate; display:none; }
+    #pastapo img {width: 110%; height: auto; }
+
+     #apo { position: absolute; top: 5%; left: 37%; width: auto; height: 100%; animation: eve 2s alternate; display:none; }
+     #apo img {width: 120%; height: auto; }
+
+  /*그러니까 이 이야기는*/
+     #who { position: absolute; top: 5%; left: 19%; width: auto; height: 100%; animation: eve 2s alternate; display:none;}
+     #who img{width: 120%; height: auto;}
+
+
+ /*행성이브*/
+    #ever{ position: absolute; top: 10%; left: 19%; width: auto; height: 100%; animation: eve 2s alternate; }
+    #ever img{width: 750px; height: auto;}
+   /*처음 >*/
+  #bbut{bottom: 39.5%; left: 25%; z-index: 1; cursor: pointer; position: absolute; }
+   #bbut img{height: 25px; width: auto; cursor: pointer;}
+
+    #typtext1{bottom: 30%;  font-size: 1.5em; display:none; left: 20%; font-family: "neo";z-index: 11;}
+    #typtext2{bottom: 30%;  font-size: 1.5em; display:none; left: 20%; font-family: "neo"; 
+    z-index: 11;}
+    #typtext3{bottom: 30%; font-size: 1.5em; display:none; left: 21%; font-family: "neo"; 
+    z-index: 11;}
+    #typtext4{bottom: 40%; font-size: 5em; display:none; left: 25%; font-family: "neo"; 
+    z-index: 11;}
+    #typtext5{bottom: 40%; font-size: 3em; display:none; left: 16%; font-family: "neo"; 
+    z-index: 11;}
+    #typtext6{bottom: 30%;  font-size: 1.5em; display:none; left: 20%; font-family: "neo";z-index: 11;}
+    #typtext7{bottom: 50%;  font-size: 2.5em; display:none; left: 16%; font-family: "neo";z-index: 11;}
+
+    #box{position: relative; margin: auto; width:1250px; height: 1000px;font-family: "neo" }
+  /*인류가 처음 발을 들인 후*/
+    #bbuton {bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+    #bbuton img{height: 25px; width: auto; cursor: 
+      pointer;}
+
+  /*첫 대사후 돌아가는>*/
+    #bbuton2{bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute;display:none;}
+    #bbuton2 img{height: 25px; width: auto; cursor: pointer;}
+
+
+  /*인류가 처음 발을 들인 후 이전*/
+    #bbuton22{bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute;display:none;}
+    #bbuton22 img{height: 25px; width: auto; cursor: pointer;}
+
+/*분명 풍요로운 행성이라 적혀있었으나로 넘어가는 버튼과 그 다음 페이지/이전 페이지로 넘어가는 버튼*/
+    #bbuton11{bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+    #bbuton11 img{height: 25px; width: auto; cursor: pointer;}
+
+    #bbuton111{bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+    #bbuton111 img{height: 25px; width: auto; cursor: pointer;}
+
+    #bbuton222{bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute; display:none;}
+    #bbuton222 img{height: 25px; width: auto; cursor: pointer;}
+
+/*재앙은 파트 앞으로가는 버튼 1111과 뒤로가는 2222*/
+   #bbuton1111{bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+    #bbuton1111 img{height: 25px; width: auto; cursor: pointer;}
+
+     #bbuton2222{bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute; display:none;}
+    #bbuton2222 img{height: 25px; width: auto; cursor: pointer;}
+
+  /*멸망x 세계이미지 앞으로가는nextb와 뒤로가는 pastb */
+
+     #nextb {bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+     #nextb img {height: 25px; width: auto; cursor: pointer;}
+
+     #pastb {bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute; display:none;}
+     #pastb img {height: 25px; width: auto; cursor: pointer;}
+
+ /*모든것을~ 앞으로가는nextbb와 뒤로가는 pastbb */
+     #nextbb {bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+     #nextbb img {height: 25px; width: auto; cursor: pointer;}
+
+     #pastbb {bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute; display:none;}
+     #pastbb img {height: 25px; width: auto; cursor: pointer;}
+
+ /*폐허도시 앞으로가는nextbbb와 뒤로가는 pastbbb */
+    #nextbbb {bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+    #nextbbb img {height: 25px; width: auto; cursor: pointer;}
+
+    #pastbbb {bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute; display:none;}
+    #pastbbb img {height: 25px; width: auto; cursor: pointer;}
+
+  /*그러니까 이 이야기는의 앞으로 bnext와 뒤로가는 bpast */
+
+    #bnext {bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+    #bnext img {height: 25px; width: auto; cursor: pointer;}
+
+    #bpast {bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute; display:none;}
+    #bpast img {height: 25px; width: auto; cursor: pointer;}
+
+  /* 이 행성이 의 앞으로 bnext와 뒤로가는 bpast */
+    #bbnext {bottom: 20%; right: 20%; z-index: 1; cursor: pointer; position: absolute;  display:none;}
+    #bbnext img {height: 25px; width: auto; cursor: pointer;}
+
+    #bbpast {bottom:20%; left: 20%;z-index: 1; cursor: pointer; position: absolute; display:none;}
+    #bbpast img {height: 25px; width: auto; cursor: pointer;}
+
+
+
+    @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+      
+  @keyframes eve {
+      0%{opacity: 0;}
+      
+      100%{opacity: 1;}
+    }
+
+  @keyframes error {
+      0%{opacity: 0;}
+      50%{opacity: 0.8;}
+      100%{opacity: 1;}
+    }
+
+    h1{
+      color: white;
+      border-right: .1em solid #000000;
+      width: 23ch;
+      margin: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      -webkit-animation: typing 2s 0s steps(30, end),
+      blink-caret .5s step-end infinite alternate;
+      z-index: 3;
+}
+     h2{
+      color: white;
+      border-right: .1em solid #000000;
+      width: 48ch;
+      margin: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      -webkit-animation: typing 4s 0s steps(30, end),
+      blink-caret .5s step-end infinite alternate;
+      z-index: 3;
+}
+
+    h3{
+      color: white;
+      border-right: .1em solid #000000;
+      width: 36ch;
+      margin: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      -webkit-animation: typing 3s 0s steps(30, end),
+      blink-caret .5s step-end infinite alternate;
+      z-index: 3;
+}
+    h4{
+      color: white;
+      border-right: .1em solid #000000;
+      width: 7ch;
+      margin: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      -webkit-animation: typing 2s 0s steps(5, end),
+      blink-caret .5s step-end infinite alternate;
+      z-index: 3;
+}
+
+    h5{
+      color: white;
+      border-right: .1em solid #000000;
+      width: 28ch;
+      margin: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      -webkit-animation: typing 5s 0s steps(340, end),
+      blink-caret .5s step-end infinite alternate;
+      z-index: 3;
+}
+
+    h6{
+      color: white;
+      border-right: .1em solid #000000;
+      width: 21ch;
+      margin: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      -webkit-animation: typing 3s 0s steps(30, end),
+      blink-caret .5s step-end infinite alternate;
+      z-index: 3;
+}
+
+    h1-1{
+      color: white;
+      border-right: .1em solid #000000;
+      width: 33ch;
+      margin: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      position: absolute;
+      -webkit-animation: typing 4s 0s steps(30, end),
+      blink-caret .5s step-end infinite alternate;
+      z-index: 3;
+}
+
+    }
+
+     </style> </head> 
+
+     <body>
+
+        <div id="box">
+          <h1 id="typtext1">인류의 고향, 행성 지구.</h1>
+          <h2 id="typtext2">인류가 처음 발을 들인 후, 발견하게 된 이 행성은.</h2>
+          <h3 id="typtext3"> 분명 풍요로운 행성이라 적혀있었으나,</h3>
+          <h4 id="typtext4"> 재앙은 </h4>
+          <h5 id="typtext5"> 모든 것을 앗아가버렸습니다. </h5>
+          <h6 id="typtext6"> 그러니까 이 이야기는. </h6>
+          <h1-1 id="typtext7"> 그저 평범한 사람들의 이야기입니다. </h1-1>
+        
+
+      <audio id="typs">
+      <source src="./bgm/computer+keyboard.mp3" type="audio/mpeg"autoplay="true">
+      </audio>
+
+      <audio id="typss">
+      <source src="./bgm/cursor_style_2.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+
+       <audio id="shorttyp">
+      <source src="./bgm/typewriter-key-1.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="glitch">
+      <source src="./bgm/Floating Cities.mp3" type="audio/mpeg">
+      </audio>
+
+      <div id="bbut">
+        <img src="./img/앞으로.png">
+    </div>
+
+      <div id="ever">
+        <img src="./img/지이이구.gif" >
+       </div>
+
+      <div id="bar">
+        <img src="./img/발.gif" >
+       </div>
+
+       <div id="bar22">
+        <img src="./img/폐허.gif" >
+       </div>
+
+        <div id="pastapo">
+        <img src="./img/미래도시.gif" >
+       </div>
+
+       <div id="apo">
+        <img src="./img/폐허도시.gif" >
+       </div>
+
+       <div id="who">
+        <img src="./img/위.gif" >
+       </div>
+
+    
+       <div id="tree">
+        <img src="./img/일러스트.gif" >
+       </div>
+
+
+
+      <div id="bbuton">
+        <img src="./img/앞으로.png">
+    </div>
+
+     <div id="bbuton11">
+        <img src="./img/앞으로.png">
+    </div>
+
+     <div id="bbuton111">
+        <img src="./img/앞으로.png">
+    </div>
+
+    <div id="bbuton1111">
+        <img src="./img/앞으로.png">
+    </div>
+
+     <div id="nextb">
+        <img src="./img/앞으로.png">
+    </div>
+    <div id="nextbb">
+        <img src="./img/앞으로.png">
+    </div>
+
+     <div id="nextbbb">
+        <img src="./img/앞으로.png">
+    </div>
+
+    <div id="bnext">
+        <img src="./img/앞으로.png">
+    </div>
+
+    <a href="1-6.html"><div id="bbnext">
+        <img src="./img/앞으로.png">
+    </div></a>
+
+
+    <div id="bbuton2">
+        <img src="./img/뒤로.png">
+    </div>
+
+     <div id="bbuton22">
+        <img src="./img/뒤로.png">
+    </div>
+
+    <div id="bbuton222">
+        <img src="./img/뒤로.png">
+    </div>
+
+    <div id="bbuton2222">
+        <img src="./img/뒤로.png">
+    </div>
+
+     <div id="pastb">
+        <img src="./img/뒤로.png">
+    </div>
+
+    <div id="pastbb">
+        <img src="./img/뒤로.png">
+    </div>
+    <div id="pastbbb">
+        <img src="./img/뒤로.png">
+    </div>
+
+    <div id="bpast">
+        <img src="./img/뒤로.png">
+    </div>
+
+    <div id="bbpast">
+        <img src="./img/뒤로.png">
+    </div>
+  </div>
+
+
+ 
+
+  <script type="text/javascript">
+
+    var bgPlay = 0;
+    bgPlay++;
+        window.onmousemove = function(){
+        if(bgPlay == 1){glitch.play(); }
+         }
+
+/*텍스트 시작*/
+     var toggle = "off";
+  bbut.onclick = function(){
+      toggle = "on";
+      bbut.style.display = "none";
+      typtext1.style.display = "inline";
+      bbuton.style.display = "inline"
+      bbuton2.style.display = "inline"
+      typs.play();
+      typss.play();
+      }
+/*되돌아가는 버튼*/
+  bbuton2.onclick = function(){
+      bbut.style.display = "inline";
+      typtext1.style.display = "none";
+      bar.style.display = "none";
+      bar22.style.display = "none";
+      bbuton.style.display = "none";
+      bbuton2.style.display = "none";
+      typss.play();    
+}
+/*인류가 처음 발을 들인 후*/
+  bbuton.onclick = function(){
+      typtext1.style.display = "none";
+      ever.style.display = "none";
+      bbuton.style.display = "none"
+      bbuton2.style.display = "none"
+      bar.style.display = "inline"
+      typtext2.style.display = "inline"
+      bbuton11.style.display = "inline"
+      bbuton22.style.display = "inline"
+  typs.play();}
+
+/*인류가 처음 발을 들인 후 이전*/
+bbuton22.onclick = function(){
+   typtext1.style.display = "inline"
+   ever.style.display = "inline";
+      bbuton.style.display = "inline"
+      bbuton2.style.display = "inline"
+      typtext2.style.display = "none";
+      bar.style.display = "none";
+      bbuton11.style.display = "none";
+      bbuton22.style.display = "none";
+      typs.play();
+}
+
+/*분명 풍요로운 행성이라 적혀있었으나,와 그 이전으로 돌아가는 버튼*/
+
+   bbuton11.onclick = function(){
+      typtext2.style.display = "none";
+      bbuton11.style.display = "none"
+      bbuton22.style.display = "none"
+      bar.style.display = "inline"
+      bar22.style.display = "inline"
+      typtext3.style.display = "inline"
+      bbuton111.style.display = "inline"
+      bbuton222.style.display = "inline"
+  typs.play();}
+
+  bbuton222.onclick = function(){
+    typtext2.style.display = "inline";
+      bbuton11.style.display = "inline"
+      bbuton22.style.display = "inline"
+      typtext3.style.display = "none";
+       bar22.style.display = "none";
+      bbuton111.style.display = "none";
+      bbuton222.style.display = "none";
+  typs.play();}
+
+/*재앙은이란 커다란 글씨와 다음으로 넘어가는 1111/이전으로 돌아가는 2222 */
+ bbuton111.onclick = function(){
+   typtext3.style.display = "none";
+    bbuton111.style.display = "none";
+    bbuton222.style.display = "none";
+    bar.style.display = "none";
+    bar22.style.display = "none";
+    typtext4.style.display =  "inline"
+    bbuton1111.style.display = "inline"
+    bbuton2222.style.display = "inline"
+    shorttyp.play();}
+
+bbuton2222.onclick = function(){
+   typtext3.style.display = "inline"
+    bbuton111.style.display = "inline"
+    bbuton222.style.display = "inline"
+    bar.style.display = "inline"
+    bar22.style.display = "inline"
+    typtext4.style.display =  "none";
+    bbuton1111.style.display = "none";
+    bbuton2222.style.display = "none";
+    typs.play();}
+
+/*재앙이 오기전 이미지와 다음으로 넘어가는 nextb/이전으로 돌아가는 pastb*/
+
+  bbuton1111.onclick = function(){
+
+    bbuton1111.style.display = "none";
+    bbuton2222.style.display = "none";
+    typtext4.style.display =  "none";
+    pastapo.style.display = "inline"
+    nextb.style.display = "inline";
+    pastb.style.display = "inline";
+    typss.play();
+
+  pastb.onclick = function(){
+
+    bbuton1111.style.display = "inline";
+    bbuton2222.style.display = "inline";
+    typtext4.style.display =  "inline";
+    pastapo.style.display = "none";
+    nextb.style.display = "none";
+    pastb.style.display = "none";
+    shorttyp.play();}
+
+  /*모든것을~ 다음으로 넘어가는 nextbb/이전으로 돌아가는 pastbb*/
+
+  nextb.onclick = function(){
+    nextb.style.display = "none";
+    pastb.style.display = "none";
+    pastapo.style.display = "none";
+    typtext5.style.display = "inline";
+    nextbb.style.display = "inline";
+    pastbb.style.display = "inline";
+    typs.play();}
+
+  pastbb.onclick = function(){
+    nextb.style.display = "inline";
+    pastb.style.display = "inline";
+    pastapo.style.display = "inline";
+    typtext5.style.display = "none";
+    nextbb.style.display = "none";
+    pastbb.style.display = "none";
+    typss.play();}
+
+   /*폐허도시 다음으로 넘어가는 nextbbb/이전으로 돌아가는 pastbbb*/
+
+   nextbb.onclick = function(){
+    typtext5.style.display = "none";
+    nextbb.style.display = "none";
+    pastbb.style.display = "none";
+    apo.style.display = "inline";
+    nextbbb.style.display = "inline";
+    pastbbb.style.display = "inline";
+    }
+
+  pastbbb.onclick = function(){
+    apo.style.display = "none";
+    nextbbb.style.display ="none";
+    pastbbb.style.display = "none";
+    typtext5.style.display = "inline";
+    nextbb.style.display = "inline";
+    pastbb.style.display = "inline";
+    typs.play();}
+
+  /*그러니까~ 다음으로 넘어가는 bnext/이전으로 돌아가는 bpast*/
+    nextbbb.onclick = function(){
+      apo.style.display = "none";
+      nextbbb.style.display ="none";
+      pastbbb.style.display = "none";
+      who.style.display = "inline";
+      typtext6.style.display = "inline";
+      bnext.style.display = "inline"
+      bpast.style.display = "inline"
+      typs.play();}
+
+    bpast.onclick = function(){
+    apo.style.display = "inline";
+    nextbbb.style.display = "inline";
+    pastbbb.style.display = "inline";
+     who.style.display = "none";
+      typtext6.style.display = "none";
+      bnext.style.display = "none";
+      bpast.style.display = "none";
+      typss.play();
+    }
+ /*지구가 ~ 다음으로 넘어가는 bbnext/이전으로 돌아가는 bbpast*/
+   bnext.onclick = function(){
+     who.style.display = "none";
+      typtext6.style.display = "none";
+      bnext.style.display = "none";
+      bpast.style.display = "none";
+
+      tree.style.display = "inline";
+      typtext7.style.display = "inline";
+      bbnext.style.display = "inline";
+      bbpast.style.display = "inline";
+      typs.play();}
+
+   bbpast.onclick = function(){
+    who.style.display = "inline";
+      typtext6.style.display = "inline";
+      bnext.style.display = "inline"
+      bpast.style.display = "inline"
+      tree.style.display = "none";
+      typtext7.style.display = "none";
+      bbnext.style.display = "none";
+      bbpast.style.display = "none";
+      typs.play();}
+
+
+  }
+
+
+
+
+
+  </script>
+
+     </body>
+     </html>

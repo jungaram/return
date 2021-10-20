@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chapter 5</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";}
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+    /*플레이어/a 스탠딩*/
+    #PPPstanding{position: absolute; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none;}
+    #PPPstanding img{ width: 60%; height: auto;}
+    #PPPstanding1{position: absolute; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none;}
+    #PPPstanding1 img{ width: 60%; height: auto;}
+
+    #AAAstanding{position: absolute;  top:9.5%;
+     right: -15%;  width: 50%; height:auto; }
+    #AAAstanding img{ width: 60%; height: auto;}
+    #AAAstanding1 {position: absolute; top:9.5%;
+     right: -15%;  width: 50%; height:auto;display: none;}
+    #AAAstanding1 img{ width: 60%; height: auto;}
+   
+   /*배경1/2*/
+ #mainstage{width: auto; height: 100%; animation:mainbg 0.5s alternate;}
+ #mainstage2{width: auto; height: 100%; animation:mainbg 0.5s alternate;display: none;}
+ #blackstage{width: auto; height: 100%; animation:mainbg  0.5s alternate; display: none;}
+
+ /*엔딩2 이미지컷*/
+ #balpyo {width: 45%; height: auto; position: absolute; top: 0%; left: 35%; animation:tbox 0.5s alternate;  display: none;}
+ #balpyo img {width: 70%; height:auto;}
+ #balpyo1 {width: 45%; height: auto;  position: absolute; top: 5%; left: 28%; animation:tbox 0.5s alternate; display: none;}
+ #balpyo1 img {width:100%; height:auto;}
+ #balpyo2 {width: 45%; height: auto;  position: absolute; top: 0%; left: 30%; animation:tbox 0.5s alternate; display: none;}
+ #balpyo2 img {width:65%; height:auto;}
+  #balpyo3 {width: 45%; height: auto;  position: absolute; top: 0%; left: 45%; animation:tbox 0.5s alternate; display: none;}
+ #balpyo3 img {width:60%; height:auto;}
+
+ /*시작 전 대화박스 및 버튼*/
+  #startbox {position: absolute; bottom: 5%; left: 25%; animation:mainbg 1s alternate;}
+  #startbox img{ width: 70%; height: auto;}
+/*대화박스*/
+    #talk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #talk img{ width: 70%; height: auto;  }
+    #rtalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #rtalk img{ width: 70%; height: auto;  }
+    #Otalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #Otalk img{ width: 70%; height: auto;  }
+
+    #box{position: relative; margin: auto; width:1250px; height: auto; font-family: "neo";}
+
+    /*a를 만나다.*/
+    #outside {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; }
+    #outside1 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+    #outside2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside3 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside4 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+
+    #outside5 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+
+    #outside6 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside7 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside8 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+
+    #outside9 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+
+    #outside10 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+
+    #outside11 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+
+    #outside12 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside13 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside14 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside15 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside16 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside17 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside18 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside19 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside20 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+    #outside21 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";  display: none;}
+
+
+ #outsidebutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;}
+ #outsidebutton img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton1 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton2 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton3 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton4 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton5 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton6 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton7 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton8 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton9 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton9 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton10 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton10 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton11 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton11 img {height: 25px; width: auto; cursor: pointer;}
+  #outsidebutton12 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton12 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton13 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton13 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton14 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton14 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton15 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton15 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton16 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton16 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton17 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton17 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton18 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton18 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton19 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton19 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton20 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton20 img {height: 25px; width: auto; cursor: pointer;}
+ #outsidebutton21 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+ #outsidebutton21 img {height: 25px; width: auto; cursor: pointer;}
+
+
+  /*a를 따라가다.*/
+
+  #peopletext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext3 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext4 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext5 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext6 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+  #peopletext7 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+  #peopletext8 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext9 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext10 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext11 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext12 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext13 {bottom:7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext14 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext15 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext16 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletext17 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+  #peopletext18 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+  #peopletext19 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+  #peopletextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+
+#peopletextbb img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb1 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb2 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb3 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb4 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb5 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb6 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb7 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb8 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb9 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb9 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb10 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb10 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb11 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb11 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb12 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb12 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb13 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb13 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb14 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb14 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb15 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb15 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb16 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb16 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb17 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb17 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb18 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb18 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb19 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb19 img {height: 25px; width: auto; cursor: pointer;}
+
+/*눈감는다,보고한다.*/
+    #wait{bottom: 12%; font-weight: 5px; font-size: 1em;display:none; left: 60%;font-family: "neo";cursor: pointer;}
+    #nowait{bottom: 7%; font-weight: 5px; font-size: 1em;display:none; left: 60%;font-family: "neo";cursor: pointer;}
+    #wait:hover{color: #808080; } 
+    #nowait:hover{color: #808080;}
+
+ /*눈감는다 텍스트*/
+    #waitext {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #waitext1 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #waitext2 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+  
+
+    #waitextbutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #waitextbutton img {height: 25px; width: auto; cursor: pointer;}
+    #waitextbutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #waitextbutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #waitextbutton2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #waitextbutton2 img {height: 25px; width: auto; cursor: pointer;}
+
+     #day{position: absolute; top: 7%; left: 45%; font-size:2em; display:none; }
+	  #senter {position: absolute; top: 7%; left: 43%;  font-size: 3em; display:none;}
+
+ 
+
+/*보고한다 텍스트*/
+    #nowaitext {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext1 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext2 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext3 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext4 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext5 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext6 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext7 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext8 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext9 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext10 {bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext11 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext12 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+
+
+
+
+    #nowaitextbutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton2 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton3 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton4 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton5 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton6 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton7 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton8 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton9 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton9 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton10 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton10 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton11 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton11 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton12 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton12 img {height: 25px; width: auto; cursor: pointer;}
+
+
+    #day1{position: absolute; top: 7%; left: 39%; font-size:2em; display:none; }
+	  #senter1 {position: absolute; top: 7%; left: 30%;  font-size: 3em; display:none;}
+
+
+    /*노멀엔딩 박스*/
+    #ending2box {left: 35%; position: absolute; width: 45%; bottom: 0%;
+      animation:mainbg 0.5s alternate; display:none;}
+    #ending2box img{ width: 60%; height: auto;}
+
+    /*굿엔딩 박스*/
+    #ending1box {left: 35%; position: absolute; width: 45%; bottom: 0%;
+      animation:mainbg 0.5s alternate; display:none; }
+    #ending1box img{ width: 60%; height: auto;}
+
+  /*구분선*/
+
+
+    @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+
+    @keyframes mainbg{
+      0%{opacity: 0;}
+      90%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes start{
+      0%{opacity: 1;}
+      50%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes tbox{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes dip{
+     0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+    @keyframes dip2{
+      0%{ right: -40%;}
+      50%{ right: -37%;}
+      100%{right: -40%;}
+    }
+
+
+  /*챕터표시용*/
+  h1 { 
+  color: white;
+  width: 16ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate;}
+  h3 { 
+  color: white;
+  width: 19ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate; }
+
+
+
+
+  h4 { 
+  color: white;
+  width: 80ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3s steps(30, end),
+              step-end infinite alternate; z-index: 3;
+}
+  h5 { 
+  color:  white;
+   
+  width: 15ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 1s steps(15, end),
+             step-end infinite alternate; z-index: 3;
+}
+   /**/
+
+
+</style> </head> 
+ 	<body>
+
+     <div id="box">
+     <iframe src="silence.mp3" allow="autoplay" id="audio/mpeg" style="display:none"></iframe>
+		
+	<audio id="Mainbg">
+      <source src="./bgm/Clean Soul.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="Mainbg2">
+      <source src="./bgm/Windswept.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="Mainbg3">
+      <source src="./bgm/Satiate.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+
+     <audio id="vip">
+      <source src="./bgm/vol.18_Track_5.wav" type="audio/wav"autoplay="true">
+     </audio>
+     <audio id="barsory">
+      <source src="./bgm/구두 발자국-아스팔트.MP3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+      <audio id="marsory">
+      <source src="./bgm/카페 웅성웅성.mp3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+       <audio id="gidongum">
+      <source src="./bgm/Computer Error by ecfike Id-135125.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+
+      <h4 id="outside">내 기록은 아마 거기서 끝일 거예요. 제법 시일이 오래된거라...</h4>
+      <h4 id="outside1">자체 내장 카메라 기록의 상태도 원체 깔끔한 상태가 아니어서 날아간<br><br>정보도 많고, 보기에 제법 불편했을텐데...</h4>
+      <h4 id="outside2">그래도 핵심 내용은 대충 보신 것 같아 다행이네요.</h4>
+      <h4 id="outside3">직접 만나는건 처음이죠? A라고 합니다.</h4>
+      <h4 id="outside4">(여기는 어디인지 묻는다.)</h4>
+      <h4 id="outside5">지금까지 보셨으면서 뭘. 지구죠. 내가, 그리고 지금의 당신이 불시착한.</h4>
+      <h4 id="outside6">아... 내용을 보시면 아시겠지만 깨어난건 당신 뿐이에요.<br><br> 다른 이들은 여전히 우주선 안에 잠들어있죠.</h4>
+      <h4 id="outside7">다만 저 때보단 나름 신사적으로 부드럽게 불시착 시켰으니 <br><br> 기체는 훨씬 상태가 좋을거예요.</h4>
+      <h4 id="outside8">......</h4>
+      <h4 id="outside9">그렇게 보지 마세요. 나름대로 이 일을 이어받은 사람이라. </h4>
+      <h4 id="outside10">......</h4>
+       <h4 id="outside11">아직도 잘 모르겠단 표정이네요. 어디부터 다시 설명을 하는게 좋을까요. </h4>
+      <h4 id="outside12">먼저 일찍이 지구에 도착한 사람들끼리 지구에 남은 기록을 보고서<br><br>N.A 프로젝트에 회의감을 느껴 남았다는 것 까지는 이해하겠죠?</h4>
+      <h4 id="outside13">그 이후... 그들은 자신들이 지구에 남아도 N.A프로젝트는 계속 될거라<br><br>생각을 했고 실제로도 당신이나 나를 보면... 답은 나오겠죠.</h4>
+      <h4 id="outside14">인류는 떠난 후의 새로운 행성에서도 과오를 반복했으니까요.</h4>
+      <h4 id="outside15">그래서 혹시 언제라도 이 지구에 도착하게 될 이들을 설득하기로 한거에요.</h4>
+      <h4 id="outside16"> 지구의 기록을 보여주고, 혹시나 우리와 생각이 같다면 함께하자고.</h4>
+      <h4 id="outside17">물론 선택은 랜덤이지만요. 우리도 직접만나기 전까진 어떤 사람이 잠에서<br><br>깨어났는지 몰라요. 운에 맡길뿐.</h4>
+      <h4 id="outside18">...너무 대첵없다고 느끼나요? 그렇다고 해도... 할 말은 없지만요.</h4>
+      <h4 id="outside19">아마 그 기록을 보았다면 당신에게도 선택권을 주어야겠죠.</h4>
+      <h4 id="outside20">그 전에 보여주고 싶은게 있는데. 따라오실래요? 아, 거부권은 없어요.</h4>
+      <h4 id="outside21">...... (따라간다.)</h4>
+
+      <h4 id="peopletext">제가 불시착한 뒤에 시간이 좀 많이 흐른 상태거든요. 보기 좋죠?</h4>
+      <h4 id="peopletext1">이브에서 살 땐 이렇게 거대한 자연경관은 눈에 담을 수 없었는데...</h4>
+      <h4 id="peopletext2">아마 이런식으로 보존을 이어가도 언젠가는 끝날 일이란걸 알고 있어요.</h4>
+      <h4 id="peopletext3">누군가는 이 행성을 발견할거고. 다시 누군가의 보금자리가<br><br> 될 수도 있을테죠. 꼭 이브의 인류가 아니더라도요.</h4>
+      <h4 id="peopletext4">그냥... 게속 반복되어가는 것들을 보니까... 최대한 늦출 수 있다면<br><br>늦춰보고 싶었어요.</h4>
+      <h4 id="peopletext5">아마 당장은 이 행성이 보존된다고 해도, 비슷한 환경에 대체행성이<br><br>그들의 눈에 띈다면 그것이 새 보금자리가 될테니 눈가리고 아웅이지만.</h4>
+      <h4 id="peopletext6">......</h4>
+      <h4 id="peopletext7">그럼에도 이 일을 계속 하는 이유라... 그냥 별 거 없어요.</h4>
+      <h4 id="peopletext8">하나의 행성이라도 더 보존하고 싶어서. 그 환경 그 자체를요.</h4>
+      <h4 id="peopletext9">그러니 눈감아줄래요? 언젠간 끝이 있을 일이라도 최대한 유예기간을<br><br>늘려주고 싶거든요.</h4>
+      <h4 id="peopletext10">물론... 어떤 선택을 하든 당신의 자유예요. 강요는 안 해요.</h4>
+      <h4 id="peopletext11">이 일을 시작한 사람들도, 그리고 우리들도 그러자고 약속했거든요.</h4>
+      <h4 id="peopletext12">한 선택을 강요할 권리는 없으니까.</h4>
+      <h4 id="peopletext13">...다만 당신이 눈 감아주기로 한다면... 이 행성에 함께 지내야<br><br>한다는 강제성은 있어요.</h4>
+      <h4 id="peopletext14">그래도 당신과 함께 내려온 우주선의 이들은 안전히 다시 방주로<br><br>올려보낼테니 걱정마시고요.</h4>
+      <h4 id="peopletext15">정보조작쪽에 제법 일가견이 있어서. 당신은 원래 없던 사람으로<br><br>만들어 줄 수 있어요.</h4>
+      <h4 id="peopletext16">다만... 모처럼 찾은 대체행성을 보고할 기회도 없이 머나먼 광활한<br><br>우주여행을 다시 떠나게 될 그 친구들은 좀 유감이네요.</h4>
+      <h4 id="peopletext17">... ...</h4>
+      <h4 id="peopletext18">...제가 말이 좀 길었네요.</h4>
+      <h4 id="peopletext19">자, 그럼 어떻게 하시겠어요?</h4>
+ 
+
+      <h5 id="wait">(눈감는다.)</h5>
+      <h5 id="nowait">(보고한다.)</h5>
+
+
+      <h4 id="waitext">후후...나쁘지않네요.</h4>
+      <h4 id="waitext1">그럼 나를 따라와요. 알려줄 것도, 할 일도 산더미거든요.</h4>
+      <h4 id="waitext2">지구에 귀환한 것을 환영해요.</h4>
+
+      <h1 id="day"> ENDING.1</h1>
+	  <h3 id="senter"> RETURN. </h3>
+
+      
+
+
+      <h4 id="nowaitext">......</h4>
+      <h4 id="nowaitext1">그렇군요. 그래요. 그게 당신의 선택이라면.</h4>
+      <h4 id="nowaitext2">후회없는 선택이 되길 바라요.</h4>
+      <h4 id="nowaitext3">...</h4>
+      <h4 id="nowaitext4">......</h4>
+      <h4 id="nowaitext5">반갑습니다, 탐사원 여러분. 만나뵙게 되어 영광입니다.</h4>
+      <h4 id="nowaitext6">여러분들은 수많은 우주 탐사 훈련과 시험을 통화한 인재들로,</h4>
+      <h4 id="nowaitext7">지금부터 행성 '지구'의 대표가 되어 프로젝트에 참가하게 됩니다.</h4>
+      <h4 id="nowaitext8">이 프로젝트의 이름은 고대의 문헌에서 발췌해온 인류를 구원한 배.</h4>
+      <h4 id="nowaitext9">노아의 방주(Noah's Ark)를 따 이하 NA프로젝트라고 칭하기로 했습니다.</h4>
+      <h4 id="nowaitext10">이제 여러분들은 인류의 희망이 되어 서서히 말라가는 고향의 땅을<br><br>떠나,광활하고 끝을 알 수 없는 우주로의 모험을 떠나게 될 것 입니다.</h4>
+      <h4 id="nowaitext11">하지만 걱정마세요! 뛰어난 지구의 기술들이 여러분들을 도울테니까요!</h4>
+      <h4 id="nowaitext12">언제나 그렇듯,</h4>
+
+
+      <h1 id="day1"> ENDING.2 우리는 </h1>
+	  <h3 id="senter1"> 답을 찾을 것입니다. </h3>
+
+
+	<div id="mainstage">
+    <center>
+    <img src="./img/망가진 후반 연구소.jpg">
+    </center>
+    </div>
+    <div id="mainstage2">
+    <img src="./img/일러스트.jpg">
+    </div>
+    <div id="blackstage">
+    <img src="./img/black space.png">
+  </div>
+
+    <div id="balpyo">
+    <img src="./img/초기발표.jpg">
+  </div>
+    <div id="balpyo1">
+    <img src="./img/발표.jpg">
+  </div>
+    <div id="balpyo2">
+    <img src="./img/발표1.png">
+  </div>
+    <div id="balpyo3">
+    <img src="./img/발표2.png">
+  </div>
+ 
+
+     <div id="PPPstanding">
+        <img src="./img/플레이어 스탠딩.png">
+    </div>
+    <div id="PPPstanding1">
+        <img src="./img/플레이어 스탠딩1.png">
+    </div>
+    <div id="AAAstanding">
+        <img src="./img/연구원A.png">
+    </div>
+    <div id="AAAstanding1">
+        <img src="./img/연구원AA.png">
+    </div>
+
+     <div id="startbox">
+    <img src="./img/대화창(오).png">
+    </div>
+
+     <div id="talk">
+    <img src="./img/대화창(오).png">
+    </div>
+    <div id="rtalk">
+    <img src="./img/대화창(왼).png">
+    </div>
+    <div id="Otalk">
+    <img src="./img/대화창(완).png">
+     </div>
+
+      <div id="outsidebutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton8">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton9">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton10">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton11">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton12">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton13">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton14">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton15">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton16">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton17">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton18">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton19">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton20">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton21">
+    <img src="./img/버튼(오).png">
+    </div>
+
+
+    <div id="peopletextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb8">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb9">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb10">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb11">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb12">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb13">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb14">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb15">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb16">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb17">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb18">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb19">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="waitextbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="waitextbutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="waitextbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+
+
+    <div id="nowaitextbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton8">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton9">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton10">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton11">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton12">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="ending2box">
+       <a href="index.html"><img src="./img/nbut1.png" 
+    onmouseover="this.src='./img/but2.png'"
+    onmouseout="this.src='./img/nbut1.png'">
+  </a></div>
+
+  <div id="ending1box">
+       <a href="index.html"><img src="./img/nbut4.png">
+  </a></div>
+
+    </div>
+
+    <script type="text/javascript">  
+     var toggle = "off";
+      var clickNumber = 0;
+      outsidebutton.onclick = function(){
+      Mainbg.play();
+      toggle = "on";
+      outside.style.display = "none";
+      outsidebutton.style.display = "none";
+      outside1.style.display = "inline";
+      outsidebutton1.style.display = "inline";
+      }
+
+      outsidebutton1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside1.style.display = "none";
+      outsidebutton1.style.display = "none";
+      outside2.style.display = "inline";
+      outsidebutton2.style.display = "inline";
+      }
+
+      outsidebutton2.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside2.style.display = "none";
+      outsidebutton2.style.display = "none";
+      outside3.style.display = "inline";
+      outsidebutton3.style.display = "inline";
+      }
+
+      outsidebutton3.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside3.style.display = "none";
+      outsidebutton3.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      talk.style.display = "none";
+      startbox.style.display = "none";
+      rtalk.style.display = "inline";
+      outside4.style.display = "inline";
+      outsidebutton4.style.display = "inline";
+      }
+
+      outsidebutton4.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside4.style.display = "none";
+      outsidebutton4.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      outside5.style.display = "inline";
+      outsidebutton5.style.display = "inline";
+      }
+      outsidebutton5.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside5.style.display = "none";
+      outsidebutton5.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      outside6.style.display = "inline";
+      outsidebutton6.style.display = "inline";
+      }
+      outsidebutton6.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside6.style.display = "none";
+      outsidebutton6.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      outside7.style.display = "inline";
+      outsidebutton7.style.display = "inline";
+      }
+      outsidebutton7.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside7.style.display = "none";
+      outsidebutton7.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      startbox.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "inline";
+      outside8.style.display = "inline";
+      outsidebutton8.style.display = "inline";
+      }
+      outsidebutton8.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside8.style.display = "none";
+      outsidebutton8.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      outside9.style.display = "inline";
+      outsidebutton9.style.display = "inline";
+      }
+      outsidebutton9.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside9.style.display = "none";
+      outsidebutton9.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      talk.style.display = "none";
+      rtalk.style.display = "inline";
+      outside10.style.display = "inline";
+      outsidebutton10.style.display = "inline";
+      }
+      outsidebutton10.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside10.style.display = "none";
+      outsidebutton10.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      outside11.style.display = "inline";
+      outsidebutton11.style.display = "inline";
+      }
+      outsidebutton11.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside11.style.display = "none";
+      outsidebutton11.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      outside12.style.display = "inline";
+      outsidebutton12.style.display = "inline";
+      }
+      outsidebutton12.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside12.style.display = "none";
+      outsidebutton12.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside13.style.display = "inline";
+      outsidebutton13.style.display = "inline";
+      }
+
+      outsidebutton13.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside13.style.display = "none";
+      outsidebutton13.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside14.style.display = "inline";
+      outsidebutton14.style.display = "inline";
+      }
+      outsidebutton14.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside14.style.display = "none";
+      outsidebutton14.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside15.style.display = "inline";
+      outsidebutton15.style.display = "inline";
+      }
+      outsidebutton15.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside15.style.display = "none";
+      outsidebutton15.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside16.style.display = "inline";
+      outsidebutton16.style.display = "inline";
+      }
+      outsidebutton16.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside16.style.display = "none";
+      outsidebutton16.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside17.style.display = "inline";
+      outsidebutton17.style.display = "inline";
+      }
+      outsidebutton17.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside17.style.display = "none";
+      outsidebutton17.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside18.style.display = "inline";
+      outsidebutton18.style.display = "inline";
+      }
+      outsidebutton18.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside18.style.display = "none";
+      outsidebutton18.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside19.style.display = "inline";
+      outsidebutton19.style.display = "inline";
+      }
+      outsidebutton19.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside19.style.display = "none";
+      outsidebutton19.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      outside20.style.display = "inline";
+      outsidebutton20.style.display = "inline";
+      }
+      outsidebutton20.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside20.style.display = "none";
+      outsidebutton20.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      talk.style.display = "none";
+      rtalk.style.display = "inline";
+      outside21.style.display = "inline";
+      outsidebutton21.style.display = "inline";
+      }
+      outsidebutton21.onclick = function(){
+      vip.play();
+      toggle = "on";
+      outside21.style.display = "none";
+      outsidebutton21.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext.style.display = "inline";
+      peopletextbb.style.display = "inline";
+      }
+
+      peopletextbb.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext.style.display = "none";
+      peopletextbb.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext1.style.display = "inline";
+      peopletextbb1.style.display = "inline";
+      }
+
+      peopletextbb1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext1.style.display = "none";
+      peopletextbb1.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext2.style.display = "inline";
+      peopletextbb2.style.display = "inline";
+      }
+      peopletextbb2.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext2.style.display = "none";
+      peopletextbb2.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext3.style.display = "inline";
+      peopletextbb3.style.display = "inline";
+      }
+      peopletextbb3.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext3.style.display = "none";
+      peopletextbb3.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext4.style.display = "inline";
+      peopletextbb4.style.display = "inline";
+      }
+      peopletextbb4.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext4.style.display = "none";
+      peopletextbb4.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext5.style.display = "inline";
+      peopletextbb5.style.display = "inline";
+      }
+      peopletextbb5.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext5.style.display = "none";
+      peopletextbb5.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "inline";
+      talk.style.display = "none";
+      rtalk.style.display = "inline";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext6.style.display = "inline";
+      peopletextbb6.style.display = "inline";
+      }
+
+      peopletextbb6.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext6.style.display = "none";
+      peopletextbb6.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext7.style.display = "inline";
+      peopletextbb7.style.display = "inline";
+      }
+
+      peopletextbb7.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext7.style.display = "none";
+      peopletextbb7.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext8.style.display = "inline";
+      peopletextbb8.style.display = "inline";
+      }
+
+      peopletextbb8.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext8.style.display = "none";
+      peopletextbb8.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext9.style.display = "inline";
+      peopletextbb9.style.display = "inline";
+      }
+      peopletextbb9.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext9.style.display = "none";
+      peopletextbb9.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext10.style.display = "inline";
+      peopletextbb10.style.display = "inline";
+      }
+      peopletextbb10.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext10.style.display = "none";
+      peopletextbb10.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext11.style.display = "inline";
+      peopletextbb11.style.display = "inline";
+      }
+      peopletextbb11.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext11.style.display = "none";
+      peopletextbb11.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext12.style.display = "inline";
+      peopletextbb12.style.display = "inline";
+      }
+      peopletextbb12.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext12.style.display = "none";
+      peopletextbb12.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext13.style.display = "inline";
+      peopletextbb13.style.display = "inline";
+      }
+      peopletextbb13.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext13.style.display = "none";
+      peopletextbb13.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext14.style.display = "inline";
+      peopletextbb14.style.display = "inline";
+      }
+      peopletextbb14.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext14.style.display = "none";
+      peopletextbb14.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext15.style.display = "inline";
+      peopletextbb15.style.display = "inline";
+      }
+      peopletextbb15.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext15.style.display = "none";
+      peopletextbb15.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext16.style.display = "inline";
+      peopletextbb16.style.display = "inline";
+      }
+      peopletextbb16.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext16.style.display = "none";
+      peopletextbb16.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext17.style.display = "inline";
+      peopletextbb17.style.display = "inline";
+      }
+      peopletextbb17.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext17.style.display = "none";
+      peopletextbb17.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext18.style.display = "inline";
+      peopletextbb18.style.display = "inline";
+      }
+      peopletextbb18.onclick = function(){
+      vip.play();
+      toggle = "on";
+      peopletext18.style.display = "none";
+      peopletextbb18.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      peopletext19.style.display = "inline";
+      peopletextbb19.style.display = "inline";
+      wait.style.display = "inline";
+      nowait.style.display = "inline";
+      }
+
+      nowait.onclick = function(){
+      Mainbg.pause();
+      peopletext19.style.display = "none";
+      peopletextbb19.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      nowaitext.style.display = "inline";
+      nowaitextbutton.style.display = "inline";
+      vip.play();  
+       }
+
+      nowaitextbutton.onclick = function(){
+      nowaitext.style.display = "none";
+      nowaitextbutton.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      nowaitext1.style.display = "inline";
+      nowaitextbutton1.style.display = "inline";
+      vip.play();  
+
+    }
+      nowaitextbutton1.onclick = function(){
+      nowaitext1.style.display = "none";
+      nowaitextbutton1.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      nowaitext2.style.display = "inline";
+      nowaitextbutton2.style.display = "inline";
+      vip.play();  
+    }
+      nowaitextbutton2.onclick = function(){
+      nowaitext2.style.display = "none";
+      nowaitextbutton2.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      nowaitext3.style.display = "inline";
+      nowaitextbutton3.style.display = "inline";
+      vip.play();  
+    }
+      nowaitextbutton3.onclick = function(){
+      nowaitext3.style.display = "none";
+      nowaitextbutton3.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      nowaitext4.style.display = "inline";
+      nowaitextbutton4.style.display = "inline";
+      vip.play();  
+    }
+       nowaitextbutton4.onclick = function(){
+       	Mainbg3.play();
+      nowaitext4.style.display = "none";
+      nowaitextbutton4.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      balpyo.style.display = "inline";
+      blackstage.style.display = "inline";
+      nowaitext5.style.display = "inline";
+      nowaitextbutton5.style.display = "inline";
+      vip.play();  
+    }
+
+     nowaitextbutton5.onclick = function(){
+      nowaitext5.style.display = "none";
+      nowaitextbutton5.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      nowaitext6.style.display = "inline";
+      nowaitextbutton6.style.display = "inline";
+      vip.play();  
+    }
+      nowaitextbutton6.onclick = function(){
+      nowaitext6.style.display = "none";
+      nowaitextbutton6.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      nowaitext7.style.display = "inline";
+      nowaitextbutton7.style.display = "inline";
+      vip.play();  
+    }
+     nowaitextbutton7.onclick = function(){
+      nowaitext7.style.display = "none";
+      nowaitextbutton7.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      balpyo.style.display = "none";
+      balpyo1.style.display = "inline";
+      nowaitext8.style.display = "inline";
+      nowaitextbutton8.style.display = "inline";
+      vip.play();  
+    }
+     nowaitextbutton8.onclick = function(){
+      nowaitext8.style.display = "none";
+      nowaitextbutton8.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      nowaitext9.style.display = "inline";
+      nowaitextbutton9.style.display = "inline";
+      vip.play();  
+    }
+      nowaitextbutton9.onclick = function(){
+      nowaitext9.style.display = "none";
+      nowaitextbutton9.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      balpyo1.style.display = "none";
+      balpyo2.style.display = "inline";
+      blackstage.style.display = "inline";
+      nowaitext10.style.display = "inline";
+      nowaitextbutton10.style.display = "inline";
+      vip.play();  
+    }
+      nowaitextbutton10.onclick = function(){
+      nowaitext10.style.display = "none";
+      nowaitextbutton10.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      balpyo2.style.display = "inline";
+      balpyo3.style.display = "inline";
+      blackstage.style.display = "inline";
+      nowaitext11.style.display = "inline";
+      nowaitextbutton11.style.display = "inline";
+      vip.play();  
+    }
+      nowaitextbutton11.onclick = function(){
+      nowaitext11.style.display = "none";
+      nowaitextbutton11.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "inline";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      nowaitext12.style.display = "inline";
+      nowaitextbutton12.style.display = "inline";
+      vip.play();  
+    }
+      nowaitextbutton12.onclick = function(){
+      nowaitext11.style.display = "none";
+      nowaitextbutton11.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      Otalk.style.display = "none";
+      mainstage2.style.display = "none";
+      blackstage.style.display ="inline";
+      nowaitext12.style.display = "none";
+      nowaitextbutton12.style.display = "none";
+      balpyo2.style.display = "none";
+      balpyo3.style.display = "none";
+      ending2box.style.display = "inline";
+      day1.style.display = "inline";
+      senter1.style.display = "inline";
+      vip.play();  
+    }
+
+
+      wait.onclick = function(){
+      Mainbg.pause();
+      Mainbg2.play();
+      peopletext19.style.display = "none";
+      peopletextbb19.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      waitext.style.display = "inline";
+      waitextbutton.style.display = "inline";
+      vip.play();  
+
+    }
+
+      waitextbutton.onclick = function(){
+      waitext.style.display = "none";
+      waitextbutton.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      waitext1.style.display = "inline";
+      waitextbutton1.style.display = "inline";
+      vip.play();  
+
+    }
+      waitextbutton1.onclick = function(){
+      waitext1.style.display = "none";
+      waitextbutton1.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display = "inline";
+      PPPstanding.style.display = "none";
+      talk.style.display = "inline";
+      rtalk.style.display = "none";
+      waitext2.style.display = "inline";
+      waitextbutton2.style.display = "inline";
+      vip.play();  
+
+    }
+     waitextbutton2.onclick = function(){
+      waitext2.style.display = "none";
+      waitextbutton2.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      PPPstanding1.style.display ="none";
+      PPPstanding.style.display = "none";
+      talk.style.display = "none";
+      rtalk.style.display = "none";
+      startbox.style.display = "none";
+      mainstage2.style.display = "none";
+      blackstage.style.display = "inline";
+      day.style.display = "inline";
+      senter.style.display = "inline";
+      ending1box.style.display = "inline";
+      vip.play();  
+
+    }
+
+
+
+
+
+      </script>
+</body>
+</html>

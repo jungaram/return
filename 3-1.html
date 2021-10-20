@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chapter 2</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";}
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+    /* 아직 이미지가 없어서 추가 안된 부분들. 순서대로 메인배경/A스탠딩*/
+   
+
+    #AAAstanding{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; animation:tbox 0.8s alternate; width: 50%; height:auto; display: none; z-index: 1;}
+    #AAAstanding img{ width: 60%; height: auto;}
+    #AAAstanding1{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none; z-index: 1;}
+    #AAAstanding1 img{ width: 60%; height: auto;}
+    #AAAstanding2{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding2 img{ width: 60%; height: auto;}
+    #AAAstanding3{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; ; width: 50%; height:auto; z-index: 1;}
+    #AAAstanding3 img{ width: 60%; height: auto;}
+    #AAAstanding4{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding4 img{ width: 60%; height: auto;}
+    #AAAstanding5{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; z-index: 2;}
+    #AAAstanding5 img{ width: 60%; height: auto;}
+    #AAAstanding6{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; z-index: 2;}
+    #AAAstanding6 img{ width: 60%; height: auto;}
+    #AAAstanding7{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding7 img{ width: 60%; height: auto;}
+
+
+    #icebox{position: absolute; cursor: pointer; top:26%; left:30%;  animation:mainbg 0.5s alternate; width: 65%; height:auto; }
+    #icebox img{ width: 30%; height: auto;}
+
+    #rock{position: absolute; cursor: pointer; top:49%; left:0%;  animation:mainbg 0.5s alternate; width: 85%; height:auto; }
+    #rock img{ width: 30%; height: auto;}
+
+    #nebiroid{position: absolute; cursor: pointer; top:70%; left:70%;  animation:mainbg 0.5s alternate; width: 50%; height:auto; }
+    #nebiroid img{ width: 30%; height: auto;}
+
+    /*냉동수면장치/주변잔해/파괴된 네비로이드 클릭용/다음장소이동 */
+    #click{position: absolute; cursor: pointer; top:20%; left:38.5%;  animation:mainbg 1s alternate; width: 50%; height:auto; display: none;}
+    #click img{ width: 5%; height: auto;}
+
+    #Rclick{position: absolute; cursor: pointer; top:60%; left:13%;  animation:mainbg 1s alternate; width: 50%; height:auto; display: none;}
+    #Rclick img{ width: 5%; height: auto;}
+
+    #Nclick{position: absolute; cursor: pointer; top:63%; right:-25%;  animation:mainbg 1s alternate; width: 50%; height:auto; display: none;}
+    #Nclick img{ width: 5%; height: auto;}
+
+    #NEXTclick{position: absolute; cursor: pointer; top:50%; 
+      right:-40%; animation:dip2 2s infinite; width: 50%; height:auto; display: none;}
+    #NEXTclick img{ width: 5%; height: auto;}
+
+    /*위치텍스트
+    #day{position: absolute; top: 0%; left: 37%; font-size:1em;}
+    #senter {position: absolute; top: 0%; left: 29%;  font-size: 2em;} */
+
+  #mainstage{width: auto; height: 100%; animation:mainbg 0.5s alternate;}
+ 
+
+  /*시작 전 대화박스 및 버튼*/
+    
+
+  #startbox { position: absolute; bottom: 5%; left: 25%; animation:mainbg 1s alternate; z-index: 2;}
+  #startbox img{ width: 70%; height: auto;  }
+
+
+  /*대화창 및 대화박스 순서대로 오 왼 완*/
+    #talk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate; z-index: 2;}
+    #talk img{ width: 70%; height: auto;  }
+    #rtalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate; z-index: 2;}
+    #rtalk img{ width: 70%; height: auto;  }
+    #Otalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate; z-index: 2;}
+    #Otalk img{ width: 70%; height: auto;}
+
+    #box{position: relative; margin: auto; width:1250px; height: auto; font-family: "neo";}
+
+    /*예 텍스트*/
+    #nowaitext2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";}
+    #nowaitext3 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+   
+    #nowaitextbutton2 {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; z-index: 3;}
+    #nowaitextbutton2 img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton3 {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none; }
+    #nowaitextbutton3 img {height: 25px; width: auto; cursor: pointer;}
+
+   /*잔해 클릭시 텍스트*/
+    #broken {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+
+    #brokenbutton {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none; }
+    #brokenbutton img {height: 25px; width: auto; cursor: pointer;}
+
+   /*네비로이드 클릭시 텍스트*/
+    #nebi {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+    #nebi1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+    #nebi2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+
+    #nebibutton {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none;}
+    #nebibutton img {height: 25px; width: auto; cursor: pointer;}
+    #nebibutton1 {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none;}
+    #nebibutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #nebibutton2 {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none;}
+    #nebibutton2 img {height: 25px; width: auto; cursor: pointer;}
+
+  /*냉동캡슐 클릭시 텍스트*/
+    #ice {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+    #ice1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+    #ice2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+
+    #icebutton {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none;}
+    #icebutton img {height: 25px; width: auto; cursor: pointer;}
+    #icebutton1 {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none;}
+    #icebutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #icebutton2 {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none;}
+    #icebutton2 img {height: 25px; width: auto; cursor: pointer;}
+
+  /*나가는 세모 클릭시 텍스트*/
+    #out {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display:none;}
+
+    #outbutton {bottom: 20%; right: 26%; z-index: 3; cursor: pointer; position: absolute; display: none;}
+    #outbutton img {height: 25px; width: auto; cursor: pointer;}
+
+
+  /*구분선*/
+
+    @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+
+    @keyframes mainbg{
+      0%{opacity: 0;}
+      90%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes start{
+      0%{opacity: 1;}
+      50%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes tbox{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes dip{
+      0%{opacity: 0; top: 30%;}
+      85%{opacity: 0; top: 30%;}
+      90%{opacity: 1; top: 30%;}
+      100%{top: 40%;}
+    }
+  @keyframes dip2{
+      0%{ right: -40%;}
+      50%{ right: -37%;}
+      100%{right: -40%;}
+    }
+
+
+  /*챕터표시용*/
+  h1 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 30ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate;}
+  h3 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 25ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate; }
+
+  h4 { 
+  color: white;
+  width: 80ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3s steps(30, end),
+              step-end infinite alternate; z-index: 3;
+}
+  h5 { 
+  color:  white;
+   
+  width: 15ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 1s steps(15, end),
+             step-end infinite alternate; z-index: 3;
+}
+  /**/
+
+
+</style> </head> 
+
+    <body>
+
+     <div id="box">
+     <iframe src="silence.mp3" allow="autoplay" id="audio/mpeg" style="display:none"></iframe>
+
+      <audio id="Mainbg">
+      <source src="./bgm/Infinite Perspective.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="vip">
+      <source src="./bgm/vol.18_Track_5.wav" type="audio/wav"autoplay="true">
+     </audio>
+
+
+     <audio id="closedoor">
+      <source src="./bgm/vol.18_Track_11.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="opendoor">
+      <source src="./bgm/vol.18_Track_17.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="warp">
+      <source src="./bgm/vol.18_Track_8.wav" type="audio/wav"autoplay="true">
+     </audio>
+      <audio id="glitch">
+      <source src="./bgm/277053__doty21__glitch-sound-1.wav" type="audio/wav"autoplay="true">
+     </audio>
+      <audio id="controlll">
+      <source src="./bgm/vol.18_Track_26.wav" type="audio/wav"autoplay="true">
+     </audio>
+      <audio id="android">
+      <source src="./bgm/vol.18_Track_14.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+     
+
+     
+  
+
+      <h4 id="nowaitext2">......!</h4>
+      <h4 id="nowaitext3">이게 무슨 일이지?! 왜 이렇게 엉망이야?</h4>
+
+      <h4 id="broken">...이런, 상당히 훼손이 됐잖아? 자가복구시스템은 무사해야할텐데.</h4>
+      <h4 id="nebi">(네비로이드도 상태가 좋진 않군. 지금은 사용할 수 없을 것 같다.)</h4>
+      <h4 id="nebi1">기본적으로 자가복구 시스템이 있긴 하지만...</h4>
+      <h4 id="nebi2">이 역시 기다릴 수 밖에 없는건가.</h4>
+      <h4 id="out">...일단 밖으로 나가서 정확하게 상태를 봐야할 것 같다.</h4>
+      <h4 id="ice">......</h4>
+      <h4 id="ice1">다행이다. 항해선 기체 자체가 튼튼해서 장치 자체엔 큰 문제는 없어.</h4>
+      <h4 id="ice2">...하지만 긴급해동장치가 먹통이야. 이래선 깨울 수 없겠어.</h4>
+
+      
+
+    <div id="mainstage">
+    <center>
+    <img src="./img/우주선내부.jpg">
+    </center>
+    
+
+    <div id="startbox">
+    <img src="./img/대화창(왼).png">
+   </div>
+
+
+    <div id="talk">
+    <img src="./img/대화창(오).png">
+  </div>
+   <div id="rtalk">
+    <img src="./img/대화창(왼).png">
+  </div>
+  <div id="Otalk">
+    <img src="./img/대화창(완).png">
+  </div>
+
+  <div id="AAAstanding">
+        <img src="./img/A우주복(진지).png">
+    </div>
+    <div id="AAAstanding1">
+        <img src="./img/A우주복(당황).png">
+    </div>
+    <div id="AAAstanding2">
+        <img src="./img/A우주복(평소).png">
+    </div>
+    <div id="AAAstanding3">
+        <img src="./img/A우주복(화남).png">
+    </div>
+    <div id="AAAstanding4">
+        <img src="./img/AA우주복(진지).png">
+    </div>
+    <div id="AAAstanding5">
+        <img src="./img/AA우주복(당황).png">
+    </div>
+    <div id="AAAstanding6">
+        <img src="./img/AA우주복(평소).png">
+    </div>
+    <div id="AAAstanding7">
+        <img src="./img/AA우주복(화남).png">
+    </div>
+
+    <div id="icebox">
+    <img src="./img/냉동박스.png">
+    </div>
+    <div id="rock">
+    <img src="./img/잔해.png">
+    </div>
+    <div id="nebiroid">
+    <img src="./img/부서진미니로이드.png">
+    </div>
+
+  
+    <div id="nowaitextbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="brokenbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="nebibutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nebibutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nebibutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="icebutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="icebutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="icebutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="outbutton">
+    <a href="3-2.html"><img src="./img/버튼(오).png">
+    </div></a>
+
+
+    <div id="click">
+    <img src="./img/화살표(아래).png">
+    </div>
+    <div id="Rclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+    <div id="Nclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+    <div id="NEXTclick">
+    <img src="./img/화살표(오).png">
+    </div>
+
+
+  
+
+
+
+     </div>
+
+     <script type="text/javascript">
+
+        var bgPlay = 0;
+          bgPlay++;
+      window.onmousemove = function(){
+      if(bgPlay == 1){Mainbg.play(); }
+    }
+
+      var toggle = "off";
+      var clickNumber = 0;
+      nowaitextbutton2.onclick = function(){
+      Mainbg.play();
+      vip.play(); 
+      toggle = "on";
+      nowaitext2.style.display = "none";
+      nowaitextbutton2.style.display = "none";
+      nowaitext3.style.display = "inline";
+      nowaitextbutton3.style.display = "inline";
+      vip.play();  
+
+    }
+      nowaitextbutton3.onclick = function(){
+      toggle = "on";
+      AAAstanding3.style.display = "none";
+      nowaitext3.style.display = "none";
+      nowaitextbutton3.style.display = "none";
+      startbox.style.display = "none";
+      vip.pause();
+      click.style.display = "inline";
+      Rclick.style.display = "inline";
+      Nclick.style.display = "inline";
+    }
+
+
+      icebox.onclick = function(){
+      toggle = "on";
+      controlll.play();  
+      vip.pause();
+      click.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      AAAstanding3.style.display = "none";
+      AAAstanding4.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      rtalk.style.display = "inline";
+      ice.style.display = "inline";
+      icebutton.style.display = "inline";
+    }
+      icebutton.onclick = function(){
+      toggle = "on";
+      controlll.pause();
+      vip.play(); 
+      ice.style.display = "none";
+      icebutton.style.display = "none";
+      ice1.style.display = "inline";
+      icebutton1.style.display = "inline";
+    }
+      icebutton1.onclick = function(){
+      toggle = "on";
+      vip.play(); 
+      ice1.style.display = "none";
+      icebutton1.style.display = "none";
+      ice2.style.display = "inline";
+      icebutton2.style.display = "inline";
+    }
+      icebutton2.onclick = function(){
+      toggle = "on";
+      vip.play(); 
+      AAAstanding2.style.display = "none";
+      ice2.style.display = "none";
+      icebutton2.style.display = "none";
+      rtalk.style.display = "none";
+    }
+
+      rock.onclick = function(){
+      toggle = "on";
+      vip.play();
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      AAAstanding3.style.display = "none";
+      AAAstanding4.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      Rclick.style.display = "none";
+      rtalk.style.display = "inline";
+      broken.style.display = "inline";
+      brokenbutton.style.display = "inline";
+    }
+      brokenbutton.onclick = function(){
+      toggle = "on";
+      vip.play();
+      AAAstanding2.style.display = "none";
+      rtalk.style.display = "none";
+      broken.style.display = "none";
+      brokenbutton.style.display = "none";
+    }
+
+
+      nebiroid.onclick = function(){
+      toggle = "on";
+      vip.play();
+      android.play();
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      AAAstanding3.style.display = "none";
+      AAAstanding4.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      Nclick.style.display = "none";
+      rtalk.style.display = "inline";
+      nebi.style.display = "inline";
+      nebibutton.style.display = "inline";
+    }
+      nebibutton.onclick = function(){
+      toggle = "on";
+      vip.play();
+      android.play();
+      nebi.style.display = "none";
+      nebibutton.style.display = "none";
+      nebi1.style.display = "inline";
+      nebibutton1.style.display = "inline";
+    }
+      nebibutton1.onclick = function(){
+      toggle = "on";
+      vip.play();
+      android.play();
+      nebi1.style.display = "none";
+      nebibutton1.style.display = "none";
+      nebi2.style.display = "inline";
+      nebibutton2.style.display = "inline";
+    }
+      nebibutton2.onclick = function(){
+      toggle = "on";
+      vip.play();
+      android.play();
+      rtalk.style.display ="none";
+      AAAstanding2.style.display = "none";
+      nebi2.style.display = "none";
+      nebibutton2.style.display = "none";
+      NEXTclick.style.display = "inline";
+    }
+
+      NEXTclick.onclick = function(){
+      toggle = "on";
+      vip.play();
+      rtalk.style.display = "inline";
+      AAAstanding.style.display = "none";
+      AAAstanding1.style.display = "none";
+      AAAstanding3.style.display = "none";
+      AAAstanding4.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      NEXTclick.style.display = "none";
+      out.style.display = "inline";
+      outbutton.style.display = "inline";
+
+     }
+
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chapter 2</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";}
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+   
+
+  #blackstage{width: auto; height: 100%; animation:mainbg 1s alternate;}
+ 
+   /*A스탠딩, 미니로이드 스탠딩*/
+    #AAAstanding{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none;}
+    #AAAstanding img{ width: 60%; height: auto;}
+    #AAAstanding1{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none;}
+    #AAAstanding1 img{ width: 60%; height: auto;}
+    #AAAstanding2{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none;}
+    #AAAstanding2 img{ width: 60%; height: auto;}
+    #AAAstanding3{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none;}
+    #AAAstanding3 img{ width: 60%; height: auto;}
+    #AAAstanding4{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none;}
+    #AAAstanding4 img{ width: 60%; height: auto;}
+    #AAAstanding5{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none;}
+    #AAAstanding5 img{ width: 60%; height: auto;}
+
+    #Mminiroid {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid img{ width: 60%; height: auto;}
+    #Mminiroid1 {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid1 img{ width: 60%; height: auto;}
+
+
+
+  /*시작 전 대화박스 및 버튼*/
+    
+
+  #startbox { position: absolute; bottom: 5%; left: 25%; animation:mainbg 1s alternate;}
+  #startbox img{ width: 70%; height: auto;  }
+  #startbarbutton  {bottom: 19%; left: 28%; z-index: 1; cursor: pointer; position: absolute; animation:start 2s infinite }
+  #startbarbutton img {height: 25px; width: auto; cursor: pointer;}
+
+
+
+  /*대화박스*/
+    #talk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #talk img{ width: 70%; height: auto;  }
+    #rtalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #rtalk img{ width: 70%; height: auto;  }
+    #Otalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #Otalk img{ width: 70%; height: auto;  }
+
+    #box{position: relative; margin: auto; width:1250px; height: auto; font-family: "neo";}
+
+
+
+
+    /*불시착 전 회상*/
+    #past{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #past1{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #past2{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #past3{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #past4{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #past5{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+
+    /*불시착 전 회상 버튼*/
+    #pastbutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton2 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton3 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton4 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton5 img {height: 25px; width: auto; cursor: pointer;}
+
+    /*불시착 후 우주선 안*/
+    #now{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #now1{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #now2{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #now3{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #now4{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #now5{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #now6{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+
+    /*불시착 후 우주선 안 버튼*/
+    #nowbutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton2 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton3 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton4 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton5 img {height: 25px; width: auto; cursor: pointer;}
+ 
+
+    /*예,아니오*/
+    #wait{bottom: 12%; font-weight: 5px; font-size: 1em;display:none; left: 65%;font-family: "neo";cursor: pointer;}
+    #nowait{bottom: 7%; font-weight: 5px; font-size: 1em;display:none; left: 65%;font-family: "neo";cursor: pointer;}
+    #wait:hover{color: #808080; } 
+    #nowait:hover{color: #808080;}
+
+    /*예 텍스트*/
+    #waitext {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #waitext1 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nonowait{bottom: 10%; font-weight: 5px; font-size: 1em;display:none; left: 65%;font-family: "neo";cursor: pointer;}
+    #nonowait:hover{color: #808080;}
+
+    #nowaitext {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+    #nowaitext1 {bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+
+
+    #nowaitextbutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton img {height: 25px; width: auto; cursor: pointer;}
+    #nowaitextbutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowaitextbutton1 img {height: 25px; width: auto; cursor: pointer;}
+
+    #waitextbutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #waitextbutton img {height: 25px; width: auto; cursor: pointer;}
+
+
+
+  /*구분선*/
+
+    @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+
+    @keyframes mainbg{
+      0%{opacity: 0;}
+      90%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes start{
+      0%{opacity: 1;}
+      50%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes tbox{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes dip{
+      0%{opacity: 0; top: 30%;}
+      85%{opacity: 0; top: 30%;}
+      90%{opacity: 1; top: 30%;}
+      100%{top: 40%;}
+    }
+  @keyframes dip2{
+      0%{ right: -40%;}
+      50%{ right: -37%;}
+      100%{right: -40%;}
+    }
+
+
+  /*챕터표시용*/
+  h1 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 30ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate;}
+  h3 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 25ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate; }
+
+  h4 { 
+  color: white;
+  width: 60ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3s steps(30, end),
+              step-end infinite alternate; z-index: 3;
+}
+  h5 { 
+  color:  white;
+   
+  width: 15ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 1s steps(15, end),
+             step-end infinite alternate; z-index: 3;
+}
+  /**/
+
+
+</style> </head> 
+
+    <body>
+
+     <div id="box">
+     <iframe src="silence.mp3" allow="autoplay" id="audio/mpeg" style="display:none"></iframe>
+
+      <audio id="Mainbg">
+      <source src="./bgm/Forboding Resonance.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     
+     <audio id="vip">
+      <source src="./bgm/vol.18_Track_5.wav" type="audio/wav"autoplay="true">
+     </audio>
+
+
+     <audio id="closedoor">
+      <source src="./bgm/vol.18_Track_11.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="opendoor">
+      <source src="./bgm/vol.18_Track_17.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="warp">
+      <source src="./bgm/vol.18_Track_8.wav" type="audio/wav"autoplay="true">
+     </audio>
+      <audio id="glitch">
+      <source src="./bgm/277053__doty21__glitch-sound-1.wav" type="audio/wav"autoplay="true">
+     </audio>
+     
+  
+
+
+      <h4 id="past">출발 전까지는 모든 것이 순조로웠다.</h4>
+      <h4 id="past1">앞으로 오랜시간을 함께하게 될 팀원들과 다시<br><br>한 번 인사를 주고 받았고,</h4>
+      <h4 id="past2">출발 전 몇 가지 최종 점검을 받은 뒤,</h4>
+      <h4 id="past3">언젠가 보자는 장난스러운 말과 함께 냉동수면에<br><br>들어갔던 기억을 끝으로</h4>
+      <h4 id="past4">우리는 맞닿게 될 행성을 향해 언제가 될지 모를 시간동안<br><br>우주를 유영하며 잠에 들다 후에 깨어나면 될 터였다.</h4>
+      <h4 id="past5">분명 그랬을텐데......</h4>
+
+
+      <h4 id="now">......</h4>
+      <h4 id="now1">(...이상한 소리가 들려온다.)</h4>
+      <h4 id="now2">(이건 노이즈 소리?)</h4>
+      <h4 id="now3">......!</h4>
+      <h4 id="now4">(...그러고보니 수면모드가 풀렸어. 도착...한건가?)</h4>
+      <h4 id="now5">(이상해. 주변이 왜 이렇게 조용하지? 수면모드가 해제되었다면 동승한<br><br> 네비로이드의 말이 들려올법도 한데.)</h4>
+      <h4 id="now6">(오류인가? 그럴리가 없을텐데... 일단 기다려볼까?)</h4>
+      <h5 id="wait">(기다린다.)</h4>
+      <h5 id="nowait">(일어난다.)</h4>
+      <h5 id="nonowait">(일어난다.)</h4>
+
+      <h4 id="waitext">......</h4>
+      <h4 id="waitext1">(아무리 기다려도 그저 고요할 뿐이다.)</h4>
+
+
+
+      <h4 id="nowaitext">......</h4>
+      <h4 id="nowaitext1">(그래, 가만히 기다리기만 할 순 없지. 일어나자.)</h4>
+      
+
+    <div id="blackstage">
+    <center>
+    <img src="./img/black space.png">
+    </center>
+
+    <div id="AAAstanding">
+        <img src="./img/A(진지).png">
+    </div>
+    <div id="AAAstanding1">
+        <img src="./img/A(평소).png">
+    </div>
+    <div id="AAAstanding2">
+        <img src="./img/A(...).png">
+    </div>
+    <div id="AAAstanding3">
+        <img src="./img/AA(진지).png">
+    </div>
+    <div id="AAAstanding4">
+        <img src="./img/AA(평소).png">
+    </div>
+    <div id="AAAstanding5">
+        <img src="./img/AA(...).png">
+    </div>
+
+    <div id="Mminiroid">
+        <img src="./img/miniroidd.png">
+    </div>
+    <div id="Mminiroid1">
+        <img src="./img/miniroidd2.png">
+    </div>
+    
+    
+
+    <div id="startbox">
+    <img src="./img/대화창(완).png">
+   </div>
+   <div id="startbarbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="talk">
+    <img src="./img/대화창(오).png">
+  </div>
+   <div id="rtalk">
+    <img src="./img/대화창(왼).png">
+  </div>
+  <div id="Otalk">
+    <img src="./img/대화창(완).png">
+  </div>
+
+
+    <div id="pastbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton5">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="nowbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton5">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="waitextbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="nowaitextbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowaitextbutton1">
+   <a href="3-1.html"> <img src="./img/버튼(오).png">
+    </div></a>
+ 
+
+
+
+     </div>
+
+     <script type="text/javascript">
+
+        var bgPlay = 0;
+          bgPlay++;
+      window.onmousemove = function(){
+      if(bgPlay == 1){Mainbg.play(); }
+    }
+
+      var toggle = "off";
+      var clickNumber = 0;
+      startbarbutton.onclick = function(){
+      Mainbg.play();
+      vip.play(); 
+      toggle = "on";
+      startbarbutton.style.display = "none";
+      past.style.display = "inline";
+      pastbutton.style.display = "inline";
+   
+    }
+
+      pastbutton.onclick = function(){
+      vip.play(); 
+      past.style.display = "none";
+      pastbutton.style.display = "none";
+      past1.style.display = "inline";
+      pastbutton1.style.display = "inline";
+
+    }
+
+
+      pastbutton1.onclick = function(){
+      vip.play(); 
+      past1.style.display = "none";
+      pastbutton1.style.display = "none";
+      past2.style.display = "inline";
+      pastbutton2.style.display = "inline";
+
+      
+    }
+      pastbutton2.onclick = function(){
+      vip.play(); 
+      past2.style.display = "none";
+      pastbutton2.style.display = "none";
+      past3.style.display = "inline";
+      pastbutton3.style.display = "inline";
+      closedoor.play();
+      
+    }
+
+      pastbutton3.onclick = function(){
+      vip.play(); 
+      past3.style.display = "none";
+      pastbutton3.style.display = "none";
+      past4.style.display = "inline";
+      pastbutton4.style.display = "inline";
+      warp.play();
+
+      
+    }
+
+      pastbutton4.onclick = function(){
+      vip.play(); 
+      past4.style.display = "none";
+      pastbutton4.style.display = "none";
+      past5.style.display = "inline";
+      pastbutton5.style.display = "inline";
+ 
+      
+    }
+      pastbutton5.onclick = function(){
+      warp.pause();
+      glitch.play();
+      past5.style.display = "none";
+      pastbutton5.style.display = "none";
+      startbox.style.display = "none";
+      AAAstanding1.style.display = "inline";
+      now.style.display = "inline";
+      nowbutton.style.display = "inline";
+      rtalk.style.display = "inline";
+      vip.play();    
+
+    }
+      nowbutton.onclick = function(){
+      warp.pause();
+      glitch.play();
+      now.style.display = "none";
+      nowbutton.style.display = "none";
+      now1.style.display = "inline";
+      nowbutton1.style.display = "inline";
+      vip.play();    
+
+    }
+      nowbutton1.onclick = function(){
+      warp.pause();
+      glitch.play();
+      now1.style.display = "none";
+      nowbutton1.style.display = "none";
+      now2.style.display = "inline";
+      nowbutton2.style.display = "inline";
+      vip.play();
+
+    }
+      nowbutton2.onclick = function(){
+      glitch.pause();
+      now2.style.display = "none";
+      nowbutton2.style.display = "none";
+      AAAstanding1.style.display = "none";
+      AAAstanding.style.display = "inline";
+      now3.style.display = "inline";
+      nowbutton3.style.display = "inline";
+      vip.play();
+      opendoor.play();    
+
+    }
+      nowbutton3.onclick = function(){
+      now3.style.display = "none";
+      nowbutton3.style.display = "none";
+      now4.style.display = "inline";
+      nowbutton4.style.display = "inline";
+      vip.play();
+      opendoor.pause();    
+
+    }
+      nowbutton4.onclick = function(){
+      now4.style.display = "none";
+      nowbutton4.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      now5.style.display = "inline";
+      nowbutton5.style.display = "inline";
+      vip.play();  
+
+    }
+      nowbutton5.onclick = function(){
+      now5.style.display = "none";
+      nowbutton5.style.display = "none";
+      now6.style.display = "inline";
+      wait.style.display = "inline";
+      nowait.style.display = "inline";
+      vip.play();  
+
+    }
+
+      wait.onclick = function(){
+      now6.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding2.style.display = "none";
+      AAAstanding.style.display = "inline";
+      waitext.style.display = "inline";
+      waitextbutton.style.display = "inline";
+      vip.play();  
+
+    }
+      waitextbutton.onclick = function(){
+      waitext.style.display = "none";
+      waitextbutton.style.display = "none";
+      waitext1.style.display = "inline";
+      nonowait.style.display = "inline";
+      vip.play();  
+
+    }
+
+      nonowait.onclick = function(){
+      now6.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      waitext1.style.display = "none";
+      nonowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      nowaitext.style.display = "inline";
+      nowaitextbutton.style.display = "inline";
+      vip.play();  
+
+    }
+
+      nowait.onclick = function(){
+      now6.style.display = "none";
+      wait.style.display = "none";
+      nowait.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      nowaitext.style.display = "inline";
+      nowaitextbutton.style.display = "inline";
+      vip.play();  
+
+    }
+      nowaitextbutton.onclick = function(){
+      nowaitext.style.display = "none";
+      nowaitextbutton.style.display = "none";
+      AAAstanding2.style.display = "none";
+      AAAstanding.style.display = "inline";
+      nowaitext1.style.display = "inline";
+      nowaitextbutton1.style.display = "inline";
+      vip.play();  
+
+    }
+      
+    
+
+  </script>
+
+</body>
+</html>

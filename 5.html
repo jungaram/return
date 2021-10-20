@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chapter 4</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";}
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+ /*A스탠딩/미니로이드 스탠딩*/
+    #Mminiroid {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid img{ width: 60%; height: auto;}
+    #Mminiroid1 {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid1 img{ width: 60%; height: auto;}
+
+    #AAAstanding{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;}
+    #AAAstanding img{ width: 60%; height: auto;}
+    #AAAstanding1{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding1 img{ width: 60%; height: auto;}
+    #AAAstanding2{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none;}
+    #AAAstanding2 img{ width: 60%; height: auto;}
+    #AAAstanding3{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding3 img{ width: 60%; height: auto;}
+
+/*미니 안드로이드*/
+   #miniroid {position: absolute; cursor: pointer; top:75%; left:5%;  animation:mainbg 1s alternate; width: 45%; height:auto; }
+   #miniroid img{ width: 35%; height: auto;}
+   #Rminiroid {position: absolute; cursor: pointer; top:75%; left:5%; width: 45%; height:auto; display: none;}
+   #Rminiroid img{ width: 35%;; height: auto;}
+
+
+/*TV/사람들/구석의 연구원*/
+   #news {position: absolute; cursor: pointer; top:0%; left:0%;  animation:mainbg 1s alternate; width: 50%; height:auto; display: none;}
+   #news img{ width: 30%; height: auto;}
+
+   #MANIpeople {position: absolute; cursor: pointer; top:40%; left:15%;  animation:mainbg 1s alternate; width: 80%; height:auto; display: none;}
+   #MANIpeople img{ width: 30%; height: auto;}
+   #MANIpeople1 {position: absolute; cursor: pointer; top:40%; right:10%;  animation:mainbg 1s alternate; width: 80% height:auto; display: none;}
+   #MANIpeople1 img{ width: 30%; height: auto;}
+
+   #people {position: absolute; cursor: pointer; top:40%; left:85%;  animation:mainbg 1s alternate; width: 30%; height:auto; display: none;}
+   #people img{ width: 30%; height: auto;}
+
+/*TV/사람들/연구원/다음장소이동*/
+    #click{position: absolute; cursor: pointer; top:35%; left:3%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #click img{ width: 8%; height: auto;}
+
+    #Rclick{position: absolute; cursor: pointer; top:30%; left:15%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #Rclick img{ width: 8%; height: auto;}
+
+    #Wclick{position: absolute; cursor: pointer; top:30%; left:87%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+
+    #Wclick img{ width: 8%; height: auto;}
+
+    #NEXTclick{position: absolute; cursor: pointer; top:30%; 
+      right:10%; animation:dip2 2s infinite; width: 50%; height:auto; display: none;}
+    #NEXTclick img{ width: 7%; height: auto;}
+
+  /*망가진병원/병원*/
+  #mainstage{width: auto; height: 100%; animation:mainbg 0.5s alternate;}
+
+  #mainstage2{width: auto; height: 100%; animation:mainbg 0.5s alternate; cursor: pointer; display: none;}
+ /*시작 전 대화박스 및 버튼*/
+  #startbox {position: absolute; bottom: 5%; left: 25%; animation:mainbg 1s alternate;}
+  #startbox img{ width: 70%; height: auto;}
+/*대화박스*/
+    #talk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #talk img{ width: 70%; height: auto;  }
+    #rtalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #rtalk img{ width: 70%; height: auto;  }
+    #Otalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #Otalk img{ width: 70%; height: auto;  }
+
+    #box{position: relative; margin: auto; width:1250px; height: auto; font-family: "neo";}
+/*로이드 따라 들어옴.*/
+ #outside{bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";}
+ #outsidebutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;}
+ #outsidebutton img {height: 25px; width: auto; cursor: pointer;}
+/*미니로이드 클릭시*/
+#miniroidtext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext3 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext4 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext5 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext6 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext7 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#miniroidtext8 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+#miniroidtextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb1 img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb2 img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb3 img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb4 img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb5 img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb6 img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb7 img {height: 25px; width: auto; cursor: pointer;}
+#miniroidtextbb8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#miniroidtextbb8 img {height: 25px; width: auto; cursor: pointer;}
+/*싸우는 사람 클릭시*/
+#maptext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#maptextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #maptextbb img {height: 25px; width: auto; cursor: pointer;}
+
+/*tv뉴스 클릭시*/
+#newstext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext1 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext2 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext3 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext4 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext5 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext6 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext7 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext8 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext9 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#newstext10 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+#newstextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#newstextbb img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb1 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb2 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb3 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb4 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb5 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb6 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb7 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb8 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb9 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb9 img {height: 25px; width: auto; cursor: pointer;}
+#newstextbb10 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+#newstextbb10 img {height: 25px; width: auto; cursor: pointer;}
+
+/*대화를 나누고 있는 사람들*/
+#peopletext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext2 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext3 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext4 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext5 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext6 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext7 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext8 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext9 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext10 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext11 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext12 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext13 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext14 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext15 {bottom :7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext16 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext17 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+#peopletext18 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+#peopletextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb1 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb2 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb3 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb4 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb5 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb6 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb7 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb7 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb8 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb8 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb9 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb9 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb10 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb10 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb11 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb11 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb12 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb12 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb13 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb13 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb14 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb14 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb15 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb15 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb16 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb16 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb17 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb17 img {height: 25px; width: auto; cursor: pointer;}
+#peopletextbb18 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+#peopletextbb18 img {height: 25px; width: auto; cursor: pointer;}
+
+/*구분선*/
+
+ @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+
+    @keyframes mainbg{
+      0%{opacity: 0;}
+      90%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes start{
+      0%{opacity: 1;}
+      50%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes tbox{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes dip{
+       0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+
+  /*챕터표시용*/
+   h1 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 30ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate;}
+  h3 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 25ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate; }
+
+  h4 { 
+  color: white;
+  width: 80ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3s steps(30, end),
+              step-end infinite alternate; z-index: 3;
+}
+  h5 { 
+  color:  white;
+   
+  width: 15ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 1s steps(15, end),
+             step-end infinite alternate; z-index: 3;
+}
+  /**/
+  </style> </head> 
+    <body>
+
+     <div id="box">
+     <iframe src="silence.mp3" allow="autoplay" id="audio/mpeg" style="display:none"></iframe>
+    
+      <audio id="Mainbg">
+      <source src="./bgm/Zombie Hoodoo.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+
+      <audio id="vip">
+      <source src="./bgm/vol.18_Track_5.wav" type="audio/wav"autoplay="true">
+     </audio>
+     <audio id="glitch">
+      <source src="./bgm/277053__doty21__glitch-sound-1.wav" type="audio/wav"autoplay="true">
+     </audio>
+     <audio id="barsory">
+      <source src="./bgm/구두 발자국-아스팔트.MP3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+      <audio id="marsory">
+      <source src="./bgm/카페 웅성웅성.mp3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+       <audio id="gidongum">
+      <source src="./bgm/Computer Error by ecfike Id-135125.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+
+
+      <h4 id="outside">...여긴 병원인가? 상상이상으로 난장판인데.</h4>
+
+      <h4 id="miniroidtext">...</h4>
+      <h4 id="miniroidtext1">...</h4>
+      <h4 id="miniroidtext2">그래, 이번엔 내게 또 어떤 진실을 알려줄지 저엉말 기대되네.</h4>
+      <h4 id="miniroidtext3">...</h4>
+      <h4 id="miniroidtext4">저리 비켜!!!</h4>
+      <h4 id="miniroidtext5">내가 더 급하단 말이야!!</h4>
+      <h4 id="miniroidtext6">진정하세요. 다들 질서를 지켜주세요. 간호로이드의 말을 따라주시길 바랍니다.</h4>
+      <h4 id="miniroidtext7">(서로 앞다투어 진료 접수를 하려는 모습이 보인다.<br><br>주변의 간호 안드로이드들이 진정시키려 하고 있으나...)</h4>
+      <h4 id="miniroidtext8">(주변에 밀쳐져 고장난 안드로이드들을 보면...<br><br>아무래도 별 효과는 없어보이지.)</h4>
+
+      <h4 id="maptext">(사람들이 삼삼오오 모여있다. 아직도 소란스럽군.)</h4>
+
+      <h4 id="newstext">... ...속보입니다.</h4>
+      <h4 id="newstext1">연휴 여파로 게미니 바이러스의 확진자 수가 연일 최다를 기록하고<br><br>있습니다.</h4>
+      <h4 id="newstext2">게미나 바이러스가 처음 발견된 이래로 어제자 신규 확진자를 포함해<br><br> 전세계 50%에 육박하고 있으며,</h4>
+      <h4 id="newstext3">치사율이 매우 높은 변이체까지 발견되어 혼란을 야기하고 있습니다.</h4>
+      <h4 id="newstext4">변이체의 경우 발견된 특이사례로는 초기 게미나 바이러스에 걸렸다가 <br><br>완치된 사람일 수록 더욱이 재발될 가능성이 높다고 보고되고 있습니다.</h4>
+      <h4 id="newstext5">이 변이체는 기존 게미나 바이러스와 다른 형태를 보이고 있으며... ...</h4>
+      <h4 id="newstext6">... ... 피해규모는 ... ... 앞으로도 감염 규모는 더 커질 가능성이<br><br>높습니다.</h4>
+      <h4 id="newstext7">당분간 확산세가 이어질 것으로 전망되며 의심증상이 나타나거나,<br><br>이전에 게미나 바이러스에 걸렸던 전적이 있는 사람의 경우</h4>
+      <h4 id="newstext8">가까운 선별 진료소 혹은 병원에 방문해주시길 간곡히 부탁드립니다.</h4>
+      <h4 id="newstext9">반복합니다. ... ...</h4>
+      <h4 id="newstext10">......</h4>
+
+      <h4 id="peopletext">(흰 가운을 입은 두 사람이 대화를 하고 있는 것 같다.)</h4>
+      <h4 id="peopletext1">선배님 표정이 너무 좋지 않아보입니다.</h4>
+      <h4 id="peopletext2">... ...너는 지금 이 사태에 대해 어떻게 생각하냐?</h4>
+      <h4 id="peopletext3">지금이라고 한다면...</h4>
+      <h4 id="peopletext4">게미니(gemini) 바이러스 말이야.</h4>
+      <h4 id="peopletext5">... ...</h4>
+      <h4 id="peopletext6">솔직하게 이 바이러스, 퍼지는 속도에 비해서 치료제 개발이 너무 더뎌.<br><br>게다가 이번 변이체 때문에 치사율까지 높아져선...</h4>
+      <h4 id="peopletext7">선배...</h4>
+      <h4 id="peopletext8">...난 솔직히 잡을 수 있을지 모르겠다. 도무지 희망이 보이질 않아.</h4>
+      <h4 id="peopletext9">하지만 아직 초기잖아요. 시간은 있어요 선배. 조금만 더 힘내봐요. 네?</h4>
+      <h4 id="peopletext10">너 그 소식 못들었냐? 이대로 전염률이 높아지면 사람들 격리시킬거라더라.</h4>
+      <h4 id="peopletext11"> 게다가 변이체 이전의 바이러스에 걸렸던 사람이라면 재발확률이 높다며.<br><br>그렇다면 빼박이지.</h4>
+      <h4 id="peopletext12">...하지만.</h4>
+      <h4 id="peopletext13">네가 착잡한건 알고 있어. 하지만 나라고 마음이 편하겠냐. 일단 우리는<br><br>할 수 있는 일이나 하자고.</h4>
+      <h4 id="peopletext14">...네.</h4>
+      <h4 id="peopletext15">(... ...맨처음의 실험기록을 생각해보면...결국 이 치사율 높은 바이러스를<br><br>잡는데 실패한 것 같군.)</h4>
+      <h4 id="peopletext16">(전염성이 높으니 격리까는 알겠어. 하지만... 상부가 세계를<br><br>버리고 떠났다는건 무슨 뜻이지?)</h4>
+      <h4 id="peopletext17">(...전에 암암리에 진행 중이라고 했던 프로젝트와 연관이 있는건<br><br>확실한 것 같은데...)</h4>
+      <h4 id="peopletext18">(아무래도 기록은 여기까지인 것 같다. 또 이동하는 것 같군.)</h4>
+
+    <div id="mainstage">
+    <center>
+    <img src="./img/부서진 병원.jpg">
+    </center>
+    </div>
+
+    <div id="mainstage2">
+    <img src="./img/병원.jpg">
+    </div>
+
+    <div id="news">
+    <img src="./img/병원뉴스.png">
+    </div>
+    <div id="people">
+    <img src="./img/두사람.png">
+   </div>
+   <div id="MANIpeople">
+    <img src="./img/병원용 스탠딩1.png">
+   </div>
+   <div id="MANIpeople1">
+    <img src="./img/병원용스탠딩2.png">
+   </div>
+
+    <div id="miniroid">
+    <img src="./img/미이니로이드.png">
+  </div>
+    <div id="Rminiroid">
+    <img src="./img/켜진미니로이드.png">
+  </div>
+
+  <div id="click">
+    <img src="./img/화살표(위).png">
+    </div>
+  <div id="Rclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+    <div id="Wclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+  <div id="NEXTclick">
+    <img src="./img/화살표(오).png">
+    </div>
+
+     <div id="AAAstanding">
+        <img src="./img/A우주복(진지).png">
+    </div>
+    <div id="AAAstanding1">
+        <img src="./img/A우주복(평소).png">
+    </div>
+    <div id="AAAstanding2">
+        <img src="./img/AA우주복(진지).png">
+    </div>
+    <div id="AAAstanding3">
+        <img src="./img/AA우주복(평소).png">
+    </div>
+
+    <div id="Mminiroid">
+        <img src="./img/miniroidd.png">
+    </div>
+    <div id="Mminiroid1">
+        <img src="./img/miniroidd2.png">
+    </div>
+
+    <div id="startbox">
+    <img src="./img/대화창(왼).png">
+    </div>
+
+    <div id="talk">
+    <img src="./img/대화창(오).png">
+    </div>
+    <div id="rtalk">
+    <img src="./img/대화창(왼).png">
+    </div>
+    <div id="Otalk">
+    <img src="./img/대화창(완).png">
+     </div>
+
+    <div id="outsidebutton">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="miniroidtextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb8">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="maptextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="newstextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb8">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb9">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb10">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="peopletextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb8">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb9">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb10">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb11">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb12">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb13">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb14">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb15">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb16">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb17">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb18">
+   <a href="6.html"> <img src="./img/버튼(오).png">
+    </div></a>
+
+     </div>
+
+      <script type="text/javascript">
+      var bgPlay = 0;
+          bgPlay++;
+      window.onmousemove = function(){
+      if(bgPlay == 1){Mainbg.play(); }
+    }
+          
+      var toggle = "off";
+      var clickNumber = 0;
+      outsidebutton.onclick = function(){
+      Mainbg.play();
+      barsory.play();
+      toggle = "on";
+      AAAstanding.style.display = "none";
+      startbox.style.display = "none";
+      outside.style.display = "none";
+      outsidebutton.style.display = "none";
+    }
+
+      miniroid.onclick = function(){
+      barsory.play();
+      toggle = "on";
+      AAAstanding.style.display = "inline";
+      rtalk.style.display = "inline";
+      miniroidtext.style.display = "inline";
+      miniroidtextbb.style.display = "inline";
+    }
+      miniroidtextbb.onclick = function(){
+      barsory.pause();
+      vip.play();
+      toggle = "on";
+      miniroidtext.style.display = "none";
+      miniroidtextbb.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      Mminiroid.style.display = "inline";
+      rtalk.style.display = "none";
+      talk.style.display = "inline";
+      miniroidtext1.style.display = "inline";
+      miniroidtextbb1.style.display = "inline";
+    }
+      miniroidtextbb1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      miniroidtext1.style.display = "none";
+      miniroidtextbb1.style.display = "none";
+      AAAstanding.style.display = "inline";
+      AAAstanding2.style.display = "none";
+      Mminiroid.style.display = "none";
+      Mminiroid1.style.display = "inline";
+      rtalk.style.display ="inline"; 
+      talk.style.display = "none";
+      miniroidtext2.style.display = "inline";
+      miniroidtextbb2.style.display = "inline";
+    }
+      miniroidtextbb2.onclick = function(){
+      gidongum.play();
+      toggle = "on";
+      miniroidtext2.style.display = "none";
+      miniroidtextbb2.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      Mminiroid.style.display = "inline";
+      Mminiroid1.style.display = "none";
+      rtalk.style.display ="none";
+      talk.style.display = "inline";
+      Rminiroid.style.display ="inline";
+      miniroid.style.display ="none";
+      miniroidtext3.style.display = "inline";
+      miniroidtextbb3.style.display = "inline";
+    }
+      miniroidtextbb3.onclick = function(){
+      vip.play();
+      marsory.play();
+      toggle = "on";
+      miniroidtext3.style.display = "none";
+      miniroidtextbb3.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      Mminiroid.style.display = "none";
+      Mminiroid1.style.display = "inline";
+      mainstage.style.display = "none";
+      mainstage2.style.display = "inline";
+      news.style.display = "inline";
+      MANIpeople.style.display = "inline";
+      MANIpeople1.style.display = "inline";
+      people.style.display = "inline";
+      rtalk.style.display ="none";
+      talk.style.display = "none";
+      Otalk.style.display = "inline";
+      miniroid.style.display ="none";
+      miniroidtext4.style.display = "inline";
+      miniroidtextbb4.style.display = "inline";
+    }
+      miniroidtextbb4.onclick = function(){
+      vip.play();
+      toggle = "on";
+      miniroidtext4.style.display = "none";
+      miniroidtextbb4.style.display = "none";
+      miniroidtext5.style.display = "inline";
+      miniroidtextbb5.style.display = "inline";
+    }
+      miniroidtextbb5.onclick = function(){
+      vip.play();
+      toggle = "on";
+      miniroidtext5.style.display = "none";
+      miniroidtextbb5.style.display = "none";
+      miniroidtext6.style.display = "inline";
+      miniroidtextbb6.style.display = "inline";
+    }
+      miniroidtextbb6.onclick = function(){
+      marsory.pause();
+      vip.play();
+      toggle = "on";
+      miniroidtext6.style.display = "none";
+      miniroidtextbb6.style.display = "none";
+      Otalk.style.display = "none";
+      rtalk.style.display = "inline";
+      AAAstanding.style.display = "inline";
+      AAAstanding2.style.display = "none";
+      miniroidtext7.style.display = "inline";
+      miniroidtextbb7.style.display = "inline";
+    }
+      miniroidtextbb7.onclick = function(){
+      vip.play();
+      toggle = "on";
+      miniroidtext7.style.display = "none";
+      miniroidtextbb7.style.display = "none";
+      miniroidtext8.style.display = "inline";
+      miniroidtextbb8.style.display = "inline";
+    }
+      miniroidtextbb8.onclick = function(){
+      vip.play();
+      toggle = "on";
+      miniroidtext8.style.display = "none";
+      miniroidtextbb8.style.display = "none";
+      AAAstanding.style.display = "none";
+      rtalk.style.display = "none";
+      Mminiroid1.style.display = "none";
+      click.style.display = "inline";
+      Rclick.style.display = "inline";
+      Wclick.style.display = "inline";
+    }
+      Rclick.onclick = function(){
+      marsory.play();
+      toggle = "on";
+      Rclick.style.display = "none";
+      maptext.style.display = "inline";
+      maptextbb.style.display = "inline";
+      rtalk.style.display = "inline"
+      AAAstanding1.style.display = "inline";
+    }
+
+      MANIpeople.onclick = function(){
+      marsory.play();
+      toggle = "on";
+      Rclick.style.display = "none";
+      maptext.style.display = "inline";
+      maptextbb.style.display = "inline";
+      rtalk.style.display = "inline"
+      AAAstanding1.style.display = "inline";
+    }
+      maptextbb.onclick = function(){
+      marsory.pause();
+      vip.play();
+      toggle = "on";
+      maptext.style.display = "none";
+      rtalk.style.display = "none";
+      maptextbb.style.display = "none";
+      AAAstanding1.style.display = "none";
+    }
+      MANIpeople1.onclick = function(){
+      marsory.play();
+      toggle = "on";
+      Rclick.style.display = "none";
+      maptext.style.display = "inline";
+      maptextbb.style.display = "inline";
+      rtalk.style.display = "inline"
+      AAAstanding1.style.display = "inline";
+    }
+      maptextbb.onclick = function(){
+      marsory.pause();
+      vip.play();
+      toggle = "on";
+      maptext.style.display = "none";
+      rtalk.style.display = "none";
+      maptextbb.style.display = "none";
+      AAAstanding1.style.display = "none";
+    }
+      click.onclick = function(){
+      marsory.play();
+      vip.play();
+      toggle = "on";
+      click.style.display = "none";
+      Otalk.style.display = "inline";
+      newstext.style.display = "inline";
+      newstextbb.style.display = "inline";
+    }
+
+      news.onclick = function(){
+      marsory.play();
+      vip.play();
+      toggle = "on";
+      click.style.display = "none";
+      Otalk.style.display = "inline";
+      newstext.style.display = "inline";
+      newstextbb.style.display = "inline";
+    }
+      newstextbb.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext.style.display = "none";
+      newstextbb.style.display = "none";
+      newstext1.style.display = "inline";
+      newstextbb1.style.display = "inline";
+    }
+      newstextbb1.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext1.style.display = "none";
+      newstextbb1.style.display = "none";
+      newstext2.style.display = "inline";
+      newstextbb2.style.display = "inline";
+    }
+      newstextbb2.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext2.style.display = "none";
+      newstextbb2.style.display = "none";
+      newstext3.style.display = "inline";
+      newstextbb3.style.display = "inline";
+    }
+      newstextbb3.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext3.style.display = "none";
+      newstextbb3.style.display = "none";
+      newstext4.style.display = "inline";
+      newstextbb4.style.display = "inline";
+    }
+      newstextbb4.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext4.style.display = "none";
+      newstextbb4.style.display = "none";
+      newstext5.style.display = "inline";
+      newstextbb5.style.display = "inline";
+    }
+      newstextbb5.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext5.style.display = "none";
+      newstextbb5.style.display = "none";
+      newstext6.style.display = "inline";
+      newstextbb6.style.display = "inline";
+    }
+      newstextbb6.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext6.style.display = "none";
+      newstextbb6.style.display = "none";
+      newstext7.style.display = "inline";
+      newstextbb7.style.display = "inline";
+    }
+      newstextbb7.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext7.style.display = "none";
+      newstextbb7.style.display = "none";
+      newstext8.style.display = "inline";
+      newstextbb8.style.display = "inline";
+    }
+      newstextbb8.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext8.style.display = "none";
+      newstextbb8.style.display = "none";
+      newstext9.style.display = "inline";
+      newstextbb9.style.display = "inline";
+    }
+      newstextbb9.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext9.style.display = "none";
+      newstextbb9.style.display = "none";
+      Otalk.style.display = "none";
+      rtalk.style.display = "inline";
+      AAAstanding.style.display = "inline";
+      newstext10.style.display = "inline";
+      newstextbb10.style.display = "inline";
+    }
+      newstextbb10.onclick = function(){
+      vip.play();
+      toggle = "on";
+      newstext10.style.display = "none";
+      newstextbb10.style.display = "none";
+      rtalk.style.display = "none";
+      AAAstanding.style.display = "none";
+    } 
+      Wclick.onclick = function(){
+      marsory.play();
+      toggle = "on";
+      Wclick.style.display = "none";
+      rtalk.style.display = "inline";
+      AAAstanding1.style.display = "inline";
+      peopletext.style.display = "inline";
+      peopletextbb.style.display = "inline";
+      }
+
+      people.onclick = function(){
+      marsory.play();
+      toggle = "on";
+      Wclick.style.display = "none";
+      rtalk.style.display = "inline";
+      AAAstanding1.style.display = "inline";
+      peopletext.style.display = "inline";
+      peopletextbb.style.display = "inline";
+      }
+      peopletextbb.onclick = function(){
+      toggle = "on";
+      Wclick.style.display = "none";
+      rtalk.style.display = "none";
+      peopletext.style.display = "none";
+      peopletextbb.style.display =  "none";
+      Otalk.style.display = "inline";
+      AAAstanding1.style.display = "none";
+      AAAstanding3.style.display = "inline";
+      peopletext1.style.display = "inline";
+      peopletextbb1.style.display = "inline";
+      }
+      peopletextbb1.onclick = function(){
+      toggle = "on";
+      peopletext1.style.display = "none";
+      peopletextbb1.style.display =  "none";
+      AAAstanding3.style.display = "none";
+      peopletext2.style.display = "inline";
+      peopletextbb2.style.display = "inline";
+      }
+      peopletextbb2.onclick = function(){
+      toggle = "on";
+      peopletext2.style.display = "none";
+      peopletextbb2.style.display =  "none";
+      peopletext3.style.display = "inline";
+      peopletextbb3.style.display = "inline";
+      }
+      peopletextbb3.onclick = function(){
+      toggle = "on";
+      peopletext3.style.display = "none";
+      peopletextbb3.style.display =  "none";
+      peopletext4.style.display = "inline";
+      peopletextbb4.style.display = "inline";
+      }
+      peopletextbb4.onclick = function(){
+      toggle = "on";
+      peopletext4.style.display = "none";
+      peopletextbb4.style.display =  "none";
+      peopletext5.style.display = "inline";
+      peopletextbb5.style.display = "inline";
+      }
+      peopletextbb5.onclick = function(){
+      toggle = "on";
+      peopletext5.style.display = "none";
+      peopletextbb5.style.display =  "none";
+      peopletext6.style.display = "inline";
+      peopletextbb6.style.display = "inline";
+      }
+      peopletextbb6.onclick = function(){
+      toggle = "on";
+      peopletext6.style.display = "none";
+      peopletextbb6.style.display =  "none";
+      peopletext7.style.display = "inline";
+      peopletextbb7.style.display = "inline";
+      }
+      peopletextbb7.onclick = function(){
+      toggle = "on";
+      peopletext7.style.display = "none";
+      peopletextbb7.style.display =  "none";
+      peopletext8.style.display = "inline";
+      peopletextbb8.style.display = "inline";
+      }
+      peopletextbb8.onclick = function(){
+      toggle = "on";
+      peopletext8.style.display = "none";
+      peopletextbb8.style.display =  "none";
+      peopletext9.style.display = "inline";
+      peopletextbb9.style.display = "inline";
+      }
+      peopletextbb9.onclick = function(){
+      toggle = "on";
+      peopletext9.style.display = "none";
+      peopletextbb9.style.display =  "none";
+      peopletext10.style.display = "inline";
+      peopletextbb10.style.display = "inline";
+      }
+      peopletextbb10.onclick = function(){
+      toggle = "on";
+      peopletext10.style.display = "none";
+      peopletextbb10.style.display =  "none";
+      peopletext11.style.display = "inline";
+      peopletextbb11.style.display = "inline";
+      }
+      peopletextbb11.onclick = function(){
+      toggle = "on";
+      peopletext11.style.display = "none";
+      peopletextbb11.style.display =  "none";
+      peopletext12.style.display = "inline";
+      peopletextbb12.style.display = "inline";
+      }
+      peopletextbb12.onclick = function(){
+      toggle = "on";
+      peopletext12.style.display = "none";
+      peopletextbb12.style.display =  "none";
+      peopletext13.style.display = "inline";
+      peopletextbb13.style.display = "inline";
+      }
+      peopletextbb13.onclick = function(){
+      toggle = "on";
+      peopletext13.style.display = "none";
+      peopletextbb13.style.display =  "none";
+      peopletext14.style.display = "inline";
+      peopletextbb14.style.display = "inline";
+      }
+      peopletextbb14.onclick = function(){
+      toggle = "on";
+      peopletext14.style.display = "none";
+      peopletextbb14.style.display =  "none";
+      Otalk.style.display =  "none";
+      AAAstanding3.style.display =  "none";
+      rtalk.style.display = "inline";
+      AAAstanding1.style.display = "inline";
+      peopletext15.style.display = "inline";
+      peopletextbb15.style.display = "inline";
+      }
+      peopletextbb15.onclick = function(){
+      toggle = "on";
+      peopletext15.style.display = "none";
+      peopletextbb15.style.display =  "none";
+      peopletext16.style.display = "inline";
+      peopletextbb16.style.display = "inline";
+      }
+      peopletextbb16.onclick = function(){
+      toggle = "on";
+      peopletext16.style.display = "none";
+      peopletextbb16.style.display =  "none";
+      peopletext17.style.display = "inline";
+      peopletextbb17.style.display = "inline";
+      }
+      peopletextbb17.onclick = function(){
+      toggle = "on";
+      peopletext17.style.display = "none";
+      peopletextbb17.style.display =  "none";
+      mainstage.style.display = "inline";
+      mainstage2.style.display = "none";
+      news.style.display = "none";
+      MANIpeople.style.display = "none";
+      MANIpeople1.style.display = "none";
+      people.style.display = "none";
+      peopletext18.style.display = "inline";
+      peopletextbb18.style.display = "inline";
+      }
+
+</script>
+
+</body>
+</html>
+
+
+
+

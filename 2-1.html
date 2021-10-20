@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chapter 1</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";}
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+    #mainstage{width: auto; height: 100%; animation:mainbg 4s alternate;}
+    #day{position: absolute; top: 0%; left: 37%; font-size:1em;}
+	#senter {position: absolute; top: 0%; left: 29%;  font-size: 2em;}
+
+/*안드로이드와의 대화창 및 대화박스*/
+
+  #talk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+  #talk img{ width: 70%; height: auto;  }
+  #rtalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+  #rtalk img{ width: 70%; height: auto;  }
+  #Otalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+  #Otalk img{ width: 70%; height: auto;  }
+
+    #box{position: relative; margin: auto; width:1250px; height: auto; font-family: "neo";}
+/*안내로이드의 스탠딩 일러스트*/
+    #annastanding {position: absolute; cursor: pointer; top:9.5%;
+     right: -15%; animation:tbox 0.8s alternate; width: 50%; height:auto;display: none;}
+    #annastanding img{ width: 60%; height: auto;}
+
+    #annastanding1 {position: absolute; cursor: pointer; top:9.5%;
+     right: -15%;  width: 50%; height:auto;display: none;}
+    #annastanding1 img{ width: 60%; height: auto;}
+
+
+/*A의 스탠딩 일러스트*/
+    #AAAstanding{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; animation:tbox 0.8s alternate; width: 50%; height:auto; display: none; z-index: 1;}
+    #AAAstanding img{ width: 60%; height: auto;}
+    #AAAstanding1{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none; z-index: 1;}
+    #AAAstanding1 img{ width: 60%; height: auto;}
+    #AAAstanding2{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding2 img{ width: 60%; height: auto;}
+    #AAAstanding3{position: absolute; cursor: pointer; top:9.5%;
+     left:5%; ; width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding3 img{ width: 60%; height: auto;}
+    #AAAstanding4{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding4 img{ width: 60%; height: auto;}
+    #AAAstanding5{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; z-index: 1;}
+    #AAAstanding5 img{ width: 60%; height: auto;}
+    #AAAstanding6{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; z-index: 1;}
+    #AAAstanding6 img{ width: 60%; height: auto;}
+    #AAAstanding7{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding7 img{ width: 60%; height: auto;}
+    #AAAstanding8{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;display: none; z-index: 1;}
+    #AAAstanding8 img{ width: 60%; height: auto;}
+
+/*와기A와C의 스탠딩 일러스트*/
+    #BABYAtanding {position: absolute; cursor: pointer; top:9.5%;
+     left:5%; animation:tbox 0.8s alternate; width: 50%; height:auto; display: none; z-index: 1;}
+    #BABYAtanding img{ width: 60%; height: auto;}
+    #BABYAtanding1 {position: absolute; cursor: pointer; top:9.5%;
+     left:5%; width: 50%; height:auto; display: none; z-index: 1;}
+    #BABYAtanding1 img{ width: 60%; height: auto;}
+
+
+    #CCCstanding {position: absolute; cursor: pointer; top:9.5%;
+     right: -15%; animation:tbox 0.8s alternate; width: 50%; height:auto;display: none;}
+    #CCCstanding img{ width: 60%; height: auto;}
+
+    #CCCstanding1 {position: absolute; cursor: pointer; top:9.5%;
+     right: -15%;  width: 50%; height:auto;display: none;}
+    #CCCstanding1 img{ width: 60%; height: auto;}
+
+
+/*시작 전 대화박스 및 버튼*/
+
+  #startbox { position: absolute; bottom: 5%; left: 25%; animation:mainbg 5s alternate;}
+  #startbox img{ width: 70%; height: auto;  }
+  #startbarbutton  {bottom: 19%; left: 28%; z-index: 1; cursor: pointer; position: absolute; animation:start 2s infinite }
+  #startbarbutton img {height: 25px; width: auto; cursor: pointer;}
+
+
+/*이미지 컷*/
+  #bbarsory{width: 45%; height: auto; display: none; position: absolute; top: 25%; left: 28%; animation:tbox 0.5s alternate; }
+  #bbarsory img {width:100%; height:auto;}
+  #talking{width: 45%; height: auto; display: none; position: absolute; top: 20%; left: 28%; animation:tbox 0.5s alternate;}
+  #talking img {width:100%; height:auto;}
+
+  #thinking{width: 45%; height: auto; display: none; position: absolute; top: 25%; left: 28%; animation:tbox 0.5s alternate;}
+  #thinking img {width:100%; height:auto;}
+
+  #haha{width: 45%; height: auto; display: none; position: absolute; top: 25%; left: 28%; animation:tbox 0.5s alternate; }
+  #haha img {width:100%; height:auto;}
+  #story{width: 45%; height: auto; display: none; position: absolute; top: 15%; left: 28%; animation:tbox 0.5s alternate;}
+  #story img {width:100%; height:auto;}
+
+  #gamsang {width: 45%; height: auto;  position: absolute; top: 5%; left: 25%; animation:tbox 0.5s alternate; display: none;}
+  #gamsang  img {width:70%; height:auto;}
+  #gaja {width: 45%; height: auto;  position: absolute; top: 35%; left: 45%; animation:tbox 0.5s alternate; display: none;}
+  #gaja img {width:65%; height:auto;}
+
+
+
+/*안드로이드와의 대화*/
+	 #andtalk{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #andtalk1{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #andtalk2{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #andtalk3{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #andtalk4{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #andtalk5{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #andtalk6{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+
+/*과거 회상*/
+	 #pasttalk{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk1{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk2{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk3{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk4{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk5{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk6{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk7{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk8{bottom: 7%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk9{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk10{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk11{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk12{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	 #pasttalk13{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	
+/*다시, 현재*/
+	#nowtalk{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk1{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk2{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk3{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk4{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk5{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk6{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk7{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+	#nowtalk8{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+
+
+
+
+/*대화창을 넘기는 버튼/안드대화*/
+    #barbutton  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #barbutton img {height: 25px; width: auto; cursor: pointer;}
+    #barbutton1  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #barbutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #barbutton2  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #barbutton2 img {height: 25px; width: auto; cursor: pointer;}
+    #barbutton3  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #barbutton3 img {height: 25px; width: auto; cursor: pointer;}
+    #barbutton4  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #barbutton4 img {height: 25px; width: auto; cursor: pointer;}
+    #barbutton5  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #barbutton5 img {height: 25px; width: auto; cursor: pointer;}
+    #barbutton6  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #barbutton6 img {height: 25px; width: auto; cursor: pointer;}
+
+/*과거 회상 버튼*/
+	#pastbutton  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton1  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton2  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton2 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton3  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton3 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton4  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton4 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton5  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton5 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton6  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton6 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton7  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton7 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton8  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton8 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton9  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton9 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton10  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton10 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton11  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton11 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton12  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton12 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton13  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton13 img {height: 25px; width: auto; cursor: pointer;}
+    #pastbutton14  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #pastbutton14 img {height: 25px; width: auto; cursor: pointer;}
+
+ /*다시 현재 버튼*/
+ 	#nowbutton  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton1  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton1 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton2  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton2 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton3  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton3 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton4  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton4 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton5  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton5 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton6  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton6 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton7  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton7 img {height: 25px; width: auto; cursor: pointer;}
+    #nowbutton8  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #nowbutton8 img {height: 25px; width: auto; cursor: pointer;}
+
+
+
+/*구분선*/
+
+	@-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+
+    @keyframes mainbg{
+			0%{opacity: 0;}
+			90%{opacity: 0;}
+			100%{opacity: 1;}
+		}
+
+	@keyframes start{
+			0%{opacity: 1;}
+			50%{opacity: 0;}
+			100%{opacity: 1;}
+		}
+
+	@keyframes tbox{
+			0%{opacity: 0;}
+			100%{opacity: 1;}
+		}
+
+	/*챕터표시용*/
+	h1 { 
+	color: white;
+	border-right: .3em solid white;
+	width: 30ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+	-webkit-animation: typing 3.3s steps(30, end),
+	           blink-caret .5s step-end infinite alternate;}
+	h3 { 
+	color: white;
+	border-right: .3em solid white;
+	width: 25ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+	-webkit-animation: typing 3.3s steps(30, end),
+	           blink-caret .5s step-end infinite alternate;	}
+
+	h4 { 
+	color: white;
+	width: 60ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+	-webkit-animation: typing 3s steps(30, end),
+	            step-end infinite alternate; z-index: 3;
+}
+	/**/
+
+
+</style> </head> 
+
+     <body>
+
+     <div id="box">
+     <iframe src="silence.mp3" allow="autoplay" id="audio/mpeg" style="display:none"></iframe>
+
+     <audio id="Mainbg">
+      <source src="./bgm/Jellyfish in Space.mp3" type="audio/mpeg"autoplay="true">
+     </audio>
+
+      <audio id="barsory">
+      <source src="./bgm/구두 발자국-아스팔트.MP3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+
+      <audio id="android">
+      <source src="./bgm/vol.18_Track_14.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+
+      <audio id="andbarsory">
+      <source src="./bgm/3 Legged Robot Walker by AGMoneyTrigga Id-231347.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+
+      <audio id="typs">
+      <source src="./bgm/computer+keyboard.mp3" type="audio/mpeg"autoplay="true">
+      </audio>
+
+     
+
+      <h1 id="day"> XXXX년 X월 XX일. 가상의 미래, 이브.</h1>
+	  <h3 id="senter">N.A.프로젝트 본부 A구역 통로</h3>
+	  <h4 id="andtalk">그럼 안내하겠습니다. 탐사원 A님.</h4>
+	  <h4 id="andtalk1">프로젝트 출발일이라 많이 긴장되시겠습니다.</h4>
+	  <h4 id="andtalk2">다른 탐사원님들도 비슷하셨거든요.</h4>
+	  <h4 id="andtalk3">...뭐, 그렇죠.</h4>
+	  <h4 id="andtalk4">그래도 자랑스러워 하셔도 좋습니다.<br><br> 탐사원님께서는 수많은 사람들을 뚫고 선발되신 인재니까요.</h4>
+	  <h4 id="andtalk5">무수한 인재들이 모인 이 프로젝트는<br><br> 인류를 위한 힘찬 도약이 될겁니다. 그리고...</h4>
+	  <h4 id="andtalk6">(이 안드로이드... 혼자 심취해서 이것저것 떠들기 시작했군.)</h4>
+
+	  <h4 id="pasttalk">(제법, 그러니까 지금보다 더 많이 어릴적에<br><br>그런 이야기를 들은 적이 있다.)</h4>
+	  <h4 id="pasttalk1">(지금의 이브가 아니라 훨씬 이전의 고향별 이야기.)</h4>
+	  <h4 id="pasttalk2">(그때는 이브가 아니라 전혀 다른 이름으로<br><br>불렸다는 이야기라든가)</h4>
+	  <h4 id="pasttalk3">(현재의 인류는 고향의 별을 버리고<br><br>지금 이곳에 온 것이라는 이야기 같은 것들 말이다.)</h4>
+	  <h4 id="pasttalk4">엥, 정말!?</h4>
+	  <h4 id="pasttalk5">아주, 아~주 옛날의 인류는 그랬다나봐.<br><br>이유는 나도 잘 모르겠지만.</h4>
+	  <h4 id="pasttalk6">나도 누군가에게 들은 이야기거든.</h4>
+	  <h4 id="pasttalk7">(한번도 가본 적 없는, 이야기로만 전해들은 고향이지만<br><br>언젠가 그곳을 가보고 싶다고 말하기에)</h4>
+	  <h4 id="pasttalk8">(떠나왔다는건 분명 이유가 있다는걸텐데 왜 그렇게나<br><br> 관심을 가지냐 물었더니)</h4>
+	  <h4 id="pasttalk9">태초의 고향이니까.</h4>
+	  <h4 id="pasttalk10">(라고 말하며 눈을 빛내던 그 모습을 잊을 수 없었다.)</h4>
+	  <h4 id="pasttalk11">(그 이후 나에게 이야기를 해주던 그 사람은.)</h4>
+	  <h4 id="pasttalk12">(자신의 바램에 더 가까워지기 위해 N.A프로젝트에 지원했고)</h4>
+	  <h4 id="pasttalk13">(선발되었다는 이야기 이후, 당연하게도 소식이 끊겨 버렸다.)</h4>
+
+	   <h4 id="nowtalk">(물론 이제와서 돌연 그 사람의 소식이 궁금해진건 아냐.)</h4>
+	   <h4 id="nowtalk1">(그저... 나도 당신이 궁금했던 것에 호기심이 생겼을 뿐.)</h4>
+	   <h4 id="nowtalk2">(...그래, 그 뿐이다.)</h4>
+	   <h4 id="nowtalk3">도착했습니다, A님.</h4>
+	   <h4 id="nowtalk4">!</h4>
+	   <h4 id="nowtalk5">안쪽에 다른 탐사원분들이 기다리고 계실겁니다.</h4>
+	   <h4 id="nowtalk6">그럼, 무운을 빌겠습니다.</h4>
+	   <h4 id="nowtalk7">......</h4>
+	   <h4 id="nowtalk8">좋아. 그럼 가볼까.</h4>
+
+
+
+
+
+
+
+      <div id="mainstage">
+		<center>
+		<img src="./img/main space.png">
+		</center></div>
+
+    <div id="bbarsory">
+  <img src="./img/발걸음.png"> 
+  </div>
+
+  <div id="talking">
+  <img src="./img/대화중...png">
+  </div>
+
+  <div id="thinking">
+  <img src="./img/고민.png">
+  </div>
+
+  <div id="haha">
+  <img src="./img/껄껄.png">
+  </div>
+  <div id="story">
+  <img src="./img/이야기.png">
+  </div>
+
+  <div id="gamsang">
+  <img src="./img/쓸데없는 감상.jpg">
+  </div>
+  <div id="gaja">
+  <img src="./img/가볼까.jpg">
+  </div>
+
+  
+
+
+	 <div id="startbox">
+		<img src="./img/대화창(완).png">
+	 </div>
+	 <div id="startbarbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+
+
+	<div id="barbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="barbutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="barbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="barbutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="barbutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="barbutton5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="barbutton6">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="pastbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton8">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton9">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton10">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton11">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton12">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="pastbutton13">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="nowbutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton6">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton7">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nowbutton8">
+    	<a href="3.html"><img src="./img/버튼(오).png">
+    </div></a>
+
+    <div id="AAAstanding">
+        <img src="./img/A(...).png">
+    </div>
+    <div id="AAAstanding1">
+        <img src="./img/A(당황).png">
+    </div>
+    <div id="AAAstanding2">
+        <img src="./img/A(진지).png">
+    </div>
+    <div id="AAAstanding3">
+        <img src="./img/A(회상진지).png">
+    </div>
+    <div id="AAAstanding4">
+        <img src="./img/A(평소).png">
+    </div>
+    <div id="AAAstanding5">
+        <img src="./img/AA(...).png">
+    </div>
+    <div id="AAAstanding6">
+        <img src="./img/AA(당황).png">
+    </div>
+    <div id="AAAstanding7">
+        <img src="./img/AA(평소).png">
+    </div>
+    <div id="AAAstanding8">
+        <img src="./img/AA(회상진지).png">
+    </div>
+
+    <div id="annastanding">
+        <img src="./img/aneroid.png">
+    </div>
+
+    <div id="annastanding1">
+        <img src="./img/Aaneroid.png">
+    </div>
+
+    <div id="BABYAtanding">
+        <img src="./img/꼬마A.png">
+    </div>
+    <div id="BABYAtanding1">
+        <img src="./img/꼬마AA.png">
+    </div>
+
+    <div id="CCCstanding">
+        <img src="./img/그사람C.png">
+    </div>
+    <div id="CCCstanding1">
+        <img src="./img/그사람CC.png">
+    </div>
+
+
+	<div id="talk">
+		<img src="./img/대화창(오).png">
+	</div>
+	 <div id="rtalk">
+		<img src="./img/대화창(왼).png">
+	</div>
+	<div id="Otalk">
+		<img src="./img/대화창(완).png">
+	</div>
+
+
+
+
+
+
+
+     </div>
+
+      <script type="text/javascript">
+
+     	 var bgPlay = 0;
+     	    bgPlay++;
+			window.onmousemove = function(){
+			if(bgPlay == 1){Mainbg.play(); }
+		}
+			var toggle = "off";
+			var clickNumber = 0;
+			startbarbutton.onclick = function(){
+			barsory.play();
+			andbarsory.play();
+			toggle = "on";
+			day.style.display = "none";
+			senter.style.display = "none";
+			startbarbutton.style.display = "none";
+			startbox.style.display = "none";
+      annastanding.style.display = "inline";
+			bbarsory.style.display = "inline";
+			talk.style.display = "inline";
+			barbutton.style.display = "inline";
+			andtalk.style.display = "inline";
+		}
+
+			barbutton.onclick = function(){
+			toggle = "on";
+			bbarsory.style.display = "none";
+			talk.style.display = "inline";
+			barbutton.style.display = "none";
+			andtalk.style.display = "none";
+			talking.style.display = "inline";
+			barbutton1.style.display = "inline";
+			andtalk1.style.display = "inline";
+			android.play();
+		}
+
+			barbutton1.onclick = function(){
+			toggle = "on";
+			barbutton1.style.display = "none";
+			andtalk1.style.display = "none";
+			talking.style.display = "inline";
+			talk.style.display = "inline";
+			barbutton2.style.display = "inline";
+			andtalk2.style.display = "inline";
+		}
+
+
+			barbutton2.onclick = function(){
+			toggle = "on";
+			barbutton2.style.display = "none";
+			andtalk2.style.display = "none";
+			talk.style.display = "none";
+      annastanding.style.display = "none";
+      annastanding1.style.display = "inline";
+      AAAstanding1.style.display = "inline";
+			rtalk.style.display = "inline";
+			barbutton3.style.display = "inline";
+			andtalk3.style.display = "inline";
+			barsory.pause();
+			andbarsory.pause();
+		}
+
+			barbutton3.onclick = function(){
+			toggle = "on";
+			barbutton3.style.display = "none";
+			andtalk3.style.display = "none";
+			rtalk.style.display = "none";
+      annastanding.style.display = "inline";
+      annastanding1.style.display = "none";
+      AAAstanding1.style.display = "none";
+      AAAstanding6.style.display = "inline";
+			talk.style.display = "inline";
+			barbutton4.style.display = "inline";
+			andtalk4.style.display = "inline";
+		}
+
+			barbutton4.onclick = function(){
+			toggle = "on";
+			barbutton4.style.display = "none";
+			andtalk4.style.display = "none";
+			barbutton5.style.display = "inline";
+			andtalk5.style.display = "inline";
+			android.play();
+		}
+
+			barbutton5.onclick = function(){
+			toggle = "on";
+			barbutton5.style.display = "none";
+			andtalk5.style.display = "none";
+			talk.style.display = "none";
+			rtalk.style.display = "inline";
+      AAAstanding1.style.display = "inline";
+      AAAstanding6.style.display = "none";
+      annastanding.style.display = "none";
+      annastanding1.style.display = "inline";
+			barbutton6.style.display = "inline";
+			andtalk6.style.display = "inline";
+		}
+			barbutton6.onclick = function(){
+			toggle = "on";
+			barbutton6.style.display = "none";
+			andtalk6.style.display = "none";
+			talking.style.display = "none";
+      AAAstanding1.style.display = "none";
+      AAAstanding3.style.display = "inline";
+			rtalk.style.display = "inline";
+			thinking.style.display = "inline";
+			pastbutton.style.display = "inline";
+			pasttalk.style.display = "inline";
+
+		}
+			pastbutton.onclick = function(){
+			toggle = "on";
+			pastbutton.style.display = "none";
+			pasttalk.style.display = "none";
+			pastbutton1.style.display = "inline";
+			pasttalk1.style.display = "inline";
+		}
+		    pastbutton1.onclick = function(){
+			toggle = "on";
+			pastbutton1.style.display = "none";
+			pasttalk1.style.display = "none";
+			pastbutton2.style.display = "inline";
+			pasttalk2.style.display = "inline";
+		}
+
+			pastbutton2.onclick = function(){
+			toggle = "on";
+			pastbutton2.style.display = "none";
+			pasttalk2.style.display = "none";
+			pastbutton3.style.display = "inline";
+			pasttalk3.style.display = "inline";
+		}
+			pastbutton3.onclick = function(){
+			toggle = "on";
+			pastbutton3.style.display = "none";
+			pasttalk3.style.display = "none";
+			thinking.style.display = "none";
+      AAAstanding3.style.display = "none";
+      annastanding.style.display = "none";
+      annastanding1.style.display ="none";
+      haha.style.display = "inline";
+      BABYAtanding.style.display = "inline";
+			pastbutton4.style.display = "inline";
+			pasttalk4.style.display = "inline";
+		}
+
+			pastbutton4.onclick = function(){
+			toggle = "on";
+			pastbutton4.style.display = "none";
+			pasttalk4.style.display = "none";
+			rtalk.style.display = "none";
+      BABYAtanding.style.display = "none";
+      BABYAtanding1.style.display = "inline";
+      CCCstanding.style.display = "inline";
+			talk.style.display = "inline";
+			pastbutton5.style.display = "inline";
+			pasttalk5.style.display = "inline";
+		}
+			pastbutton5.onclick = function(){
+			toggle = "on";
+			pastbutton5.style.display = "none";
+			pasttalk5.style.display = "none";
+			pastbutton6.style.display = "inline";
+			pasttalk6.style.display = "inline";
+		}
+			pastbutton6.onclick = function(){
+			toggle = "on";
+			pastbutton6.style.display = "none";
+			pasttalk6.style.display = "none";
+			talk.style.display = "none";
+			rtalk.style.display = "inline";
+      AAAstanding3.style.display = "inline";
+      BABYAtanding1.style.display = "none";
+      CCCstanding.style.display = "none";
+      CCCstanding1.style.display = "inline";
+			pastbutton7.style.display = "inline";
+			pasttalk7.style.display = "inline";
+		}
+			pastbutton7.onclick = function(){
+			toggle = "on";
+			pastbutton7.style.display = "none";
+			pasttalk7.style.display = "none";
+      haha.style.display = "none";
+      story.style.display = "inline";
+			pastbutton8.style.display = "inline";
+			pasttalk8.style.display = "inline";
+		}
+
+			pastbutton8.onclick = function(){
+			toggle = "on";
+			pastbutton8.style.display = "none";
+			pasttalk8.style.display = "none";
+			rtalk.style.display = "none";
+			talk.style.display = "inline";
+      AAAstanding8.style.display = "inline";
+      CCCstanding.style.display = "inline";
+      CCCstanding1.style.display = "none";
+			pastbutton9.style.display = "inline";
+			pasttalk9.style.display = "inline";
+		}
+			pastbutton9.onclick = function(){
+			toggle = "on";
+			pastbutton9.style.display = "none";
+			pasttalk9.style.display = "none";
+			talk.style.display = "none";
+			rtalk.style.display = "inline";
+      AAAstanding8.style.display ="none";
+      CCCstanding.style.display = "none";
+      CCCstanding1.style.display = "inline";
+      AAAstanding3.style.display = "inline";
+			pastbutton10.style.display = "inline";
+			pasttalk10.style.display = "inline";
+		}
+			pastbutton10.onclick = function(){
+			toggle = "on";
+			pastbutton10.style.display = "none";
+			pasttalk10.style.display = "none";
+			pastbutton11.style.display = "inline";
+			pasttalk11.style.display = "inline";
+		}	
+			pastbutton11.onclick = function(){
+			toggle = "on";
+			pastbutton11.style.display = "none";
+			pasttalk11.style.display = "none";
+			pastbutton12.style.display = "inline";
+			pasttalk12.style.display = "inline";
+		}
+			pastbutton12.onclick = function(){
+			toggle = "on";
+			pastbutton12.style.display = "none";
+			pasttalk12.style.display = "none";
+			pastbutton13.style.display = "inline";
+			pasttalk13.style.display = "inline";
+		}
+			pastbutton13.onclick = function(){
+			toggle = "on";
+			pastbutton13.style.display = "none";
+			pasttalk13.style.display = "none";
+      story.style.display = "none";
+      gamsang.style.display = "inline";
+			nowbutton.style.display = "inline";
+			nowtalk.style.display = "inline";
+		}
+			nowbutton.onclick = function(){
+			toggle = "on";
+			nowbutton.style.display = "none";
+			nowtalk.style.display = "none";
+			nowbutton1.style.display = "inline";
+			nowtalk1.style.display = "inline";
+		}
+			nowbutton1.onclick = function(){
+			toggle = "on";
+			nowbutton1.style.display = "none";
+			nowtalk1.style.display = "none";
+			nowbutton2.style.display = "inline";
+			nowtalk2.style.display = "inline";
+		}
+			nowbutton2.onclick = function(){
+			toggle = "on";
+			nowbutton2.style.display = "none";
+			nowtalk2.style.display = "none";
+			rtalk.style.display = "none";
+      CCCstanding1.style.display ="none";
+      AAAstanding3.style.display = "none";
+      AAAstanding8.style.display = "inline";
+      annastanding.style.display = "inline";
+			talk.style.display = "inline";
+			nowbutton3.style.display = "inline";
+			nowtalk3.style.display = "inline";
+		}
+			nowbutton3.onclick = function(){
+			toggle = "on";
+			nowbutton3.style.display = "none";
+			nowtalk3.style.display = "none";
+			talk.style.display = "none";
+      AAAstanding8.style.display = "none";
+      gaja.style.display ="inline";
+      gamsang.style.display = "inline";
+      AAAstanding.style.display = "inline";
+      annastanding1.style.display = "inline";
+      annastanding.style.display ="none";
+			rtalk.style.display = "inline";
+			nowbutton4.style.display = "inline";
+			nowtalk4.style.display = "inline";
+		}
+			nowbutton4.onclick = function(){
+			toggle = "on";
+			nowbutton4.style.display = "none";
+			nowtalk4.style.display = "none";
+			rtalk.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding5.style.display = "inline";
+      annastanding1.style.display = "none";
+      annastanding.style.display ="inline";
+			talk.style.display = "inline";
+			nowbutton5.style.display = "inline";
+			nowtalk5.style.display = "inline";
+		}
+			nowbutton5.onclick = function(){
+			toggle = "on";
+			nowbutton5.style.display = "none";
+			nowtalk5.style.display = "none";
+			nowbutton6.style.display = "inline";
+			nowtalk6.style.display = "inline";
+			andbarsory.play();
+		}
+			nowbutton6.onclick = function(){
+			toggle = "on";
+			nowbutton6.style.display = "none";
+			nowtalk6.style.display = "none";
+			talk.style.display = "none";
+      AAAstanding5.style.display = "none";
+      AAAstanding.style.display = "inline";
+      annastanding1.style.display = "none";
+      annastanding.style.display ="none";
+			rtalk.style.display = "inline";
+			nowbutton7.style.display = "inline";
+			nowtalk7.style.display = "inline";
+		}
+			nowbutton7.onclick = function(){
+			toggle = "on";
+			nowbutton7.style.display = "none";
+			nowtalk7.style.display = "none";
+			nowbutton8.style.display = "inline";
+			nowtalk8.style.display = "inline";
+			andbarsory.pause();
+		}
+
+	 </script>
+
+     </body>
+     </html>

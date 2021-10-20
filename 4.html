@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>chapter 3</title>
+    <style type="text/css">
+    html{background-color: #000000; }
+    body,div {padding: 0; margin: 0; }
+    html,body {margin: 0; padding:0; font-family: "neo";}
+    @font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+ /*A스탠딩/미니로이드 스탠딩*/
+  #Mminiroid {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid img{ width: 60%; height: auto;}
+    #Mminiroid1 {position: absolute; cursor: pointer; top:50%;
+     right: -18%; width: 50%; height:auto; display: none; }
+
+    #Mminiroid1 img{ width: 60%; height: auto;}
+
+    #AAAstanding{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto;}
+    #AAAstanding img{ width: 60%; height: auto;}
+    #AAAstanding1{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding1 img{ width: 60%; height: auto;}
+    #AAAstanding2{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none;}
+    #AAAstanding2 img{ width: 60%; height: auto;}
+    #AAAstanding3{position: absolute; cursor: pointer; top:9.5%;
+     left:5%;  width: 50%; height:auto; display: none; }
+    #AAAstanding3 img{ width: 60%; height: auto;}
+
+
+ /* 창 밖/지도/미니 안드로이드*/
+   
+   #brokenwindow {position: absolute; cursor: pointer; top:30%; left:12%;  animation:mainbg 1s alternate; width: 80%; height:auto; }
+   #brokenwindow img{ width: 50%; height: auto;}
+
+   #brokenmap {position: absolute; cursor: pointer; top:25%; left:75%;  animation:mainbg 1s alternate; width: 50%; height:auto; }
+   #brokenmap img{ width: 25%; height: auto;}
+
+   #Bbrokenmap {position: absolute; cursor: pointer; top:15%; left:30%;  animation:mainbg 0.5s alternate; width: 55%; height:auto; display: none;}
+   #Bbrokenmap img{ width: 90%; height: auto;}
+
+   #miniroid {position: absolute; cursor: pointer; top:70%; left:70%;  animation:mainbg 1s alternate; width: 50%; height:auto; }
+   #miniroid img{ width: 35%; height: auto;}
+   #Rminiroid {position: absolute; cursor: pointer; top:70%; left:70%;  width: 50%; height:auto; display: none;}
+   #Rminiroid img{ width: 35%;; height: auto;}
+
+
+ /* 창밖/지도/tv뉴스/대화 주고받는 사람들*/
+
+	
+   #nwindow {position: absolute; cursor: pointer; top:30%; left:12.5%;  animation:mainbg 1s alternate; width: 80%; height:auto; display: none;}
+   #nwindow img{ width: 50%; height: auto;}
+
+   #worldmap {position: absolute; cursor: pointer; top:25%; left:79%;  animation:mainbg 1s alternate; width: 50%; height:auto; display: none;}
+   #worldmap img{ width: 25%; height: auto;}
+   #Wworldmap  {position: absolute; cursor: pointer; top:15%; left:30%;  animation:mainbg 0.5s alternate; width: 55%; height:auto; display: none;}
+   #Wworldmap img{ width: 90%; height: auto;}
+
+   #news {position: absolute; cursor: pointer; top:30%; left:55%;  animation:mainbg 1s alternate; width: 50%; height:auto; display: none;}
+   #news img{ width: 30%; height: auto;}
+	
+   #people {position: absolute; cursor: pointer; top:40%; right:15%;  animation:mainbg 1s alternate; width: 50%; height:auto; display: none;}
+   #people img{ width: 30%; height: auto;}
+
+ /* 창 밖/지도/미니 안드로이드/tv뉴스/대화 주고받는 사람들 표시세모*/
+
+    #nwindowclick{position: absolute; cursor: pointer; top:23%; left:30%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #nwindowclick img{ width: 7%; height: auto;}
+
+
+    #Nnwindowclick{position: absolute; cursor: pointer; top:23%; left:30%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #Nnwindowclick img{ width: 7%; height: auto;}
+
+    #mapclick{position: absolute; cursor: pointer; top:19%; left:80%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #mapclick img{ width: 7%; height: auto;}
+    #Mmapclick{position: absolute; cursor: pointer; top:19%; left:84%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #Mmapclick img{ width: 7%; height: auto;}
+
+    #miniroidclick{position: absolute; cursor: pointer; top:65%; left:76%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #miniroidclick img{ width: 7%; height: auto;}
+
+
+    #tvclick{position: absolute; cursor: pointer; top:20%; left:63%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #tvclick img{ width: 7%; height: auto;}
+
+    #peopleclick{position: absolute; cursor: pointer; top:35%; left:40%;  animation:dip 1s alternate; width: 50%; height:auto; display: none;}
+    #peopleclick img{ width: 7%; height: auto;}
+
+ /*다음 장소로 향하는 세모 버튼 */
+    #NEXTclick{position: absolute; cursor: pointer; top:30%; 
+      right:10%; animation:dip2 2s infinite; width: 50%; height:auto; display: none;}
+    #NEXTclick img{ width: 7%; height: auto;}
+
+ /*위치텍스트
+    #day{position: absolute; top: 0%; left: 37%; font-size:1em;}
+    #senter {position: absolute; top: 0%; left: 29%;  font-size: 2em;} */
+
+ /*망가진휴게실/휴게실*/
+  #mainstage{width: auto; height: 100%; animation:mainbg 0.5s alternate;}
+
+  #mainstage2{width: auto; height: 100%; animation:mainbg 0.5s alternate; cursor: pointer; display: none;}
+
+ /*시작 전 대화박스 및 버튼*/
+  #startbox {position: absolute; bottom: 5%; left: 25%; animation:mainbg 1s alternate;}
+  #startbox img{ width: 70%; height: auto;}
+
+ /*대화박스*/
+    #talk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #talk img{ width: 70%; height: auto;  }
+    #rtalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #rtalk img{ width: 70%; height: auto;  }
+    #Otalk { position: absolute; bottom: 5%; left: 25%; display:none; animation:tbox 0.5s alternate;}
+    #Otalk img{ width: 70%; height: auto;  }
+
+    #box{position: relative; margin: auto; width:1250px; height: auto; font-family: "neo";}
+
+ /*로이드 따라 들어옴.*/
+    #outside{bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";}
+    #outside1{bottom: 10%; font-weight: 5px; font-size: 1em; display:none; left: 28%; font-family: "neo";}
+
+    #outsidebutton {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;}
+    #outsidebutton img {height: 25px; width: auto; cursor: pointer;}
+    #outsidebutton1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+    #outsidebutton1 img {height: 25px; width: auto; cursor: pointer;}
+
+/*맵 클릭시*/
+	#brokeninside {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+	#brokeninsidebb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#brokeninsidebb  img {height: 25px; width: auto; cursor: pointer;}
+/*부서진창밖 클릭시*/
+	#brokenwindowtext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+	#brokenwindowtextbb  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#brokenwindowtextbb img {height: 25px; width: auto; cursor: pointer;}
+/*부서진지도 클릭시*/
+	#brokenmaptext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo";display: none;}
+
+	#brokenmaptextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#brokenmaptextbb img {height: 25px; width: auto; cursor: pointer;}
+
+/*미니로이드 클릭시*/
+	#miniroidtext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#miniroidtext1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+	#miniroidtextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#miniroidtextbb img {height: 25px; width: auto; cursor: pointer;}
+	#miniroidtextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#miniroidtextbb1 img {height: 25px; width: auto; cursor: pointer;}
+
+/*창밖 클릭시*/
+	#nwindowtext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#nwindowtext1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+	#nwindowtextbb  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#nwindowtextbb img {height: 25px; width: auto; cursor: pointer;}
+	#nwindowtextbb1  {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#nwindowtextbb1 img {height: 25px; width: auto; cursor: pointer;}
+/*지도 클릭시*/
+	#maptext {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#maptext1 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+
+	#maptextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#maptextbb img {height: 25px; width: auto; cursor: pointer;}
+	#maptextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#maptextbb1 img {height: 25px; width: auto; cursor: pointer;}
+
+
+/*tv뉴스 클릭시*/
+	#newstext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#newstext1 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#newstext2 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	
+	#newstextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#newstextbb img {height: 25px; width: auto; cursor: pointer;}
+	#newstextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#newstextbb1 img {height: 25px; width: auto; cursor: pointer;}
+	#newstextbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute; display: none;}
+	#newstextbb2 img {height: 25px; width: auto; cursor: pointer;}
+
+/*대화를 나누고 있는 사람들*/
+	#peopletext {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#peopletext1 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#peopletext2 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#peopletext3 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#peopletext4 {bottom: 7%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#peopletext5 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	#peopletext6 {bottom: 10%; font-weight: 5px; font-size: 1em; left: 28%; font-family: "neo"; display: none;}
+	
+
+	#peopletextbb {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#peopletextbb img {height: 25px; width: auto; cursor: pointer;}
+	#peopletextbb1 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#peopletextbb1 img {height: 25px; width: auto; cursor: pointer;}
+	#peopletextbb2 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#peopletextbb2 img {height: 25px; width: auto; cursor: pointer;}
+	#peopletextbb3 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#peopletextbb3 img {height: 25px; width: auto; cursor: pointer;}
+	#peopletextbb4 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#peopletextbb4 img {height: 25px; width: auto; cursor: pointer;}
+	#peopletextbb5 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#peopletextbb5 img {height: 25px; width: auto; cursor: pointer;}
+	#peopletextbb6 {bottom: 20%; right: 26%; z-index: 1; cursor: pointer; position: absolute;display: none;}
+	#peopletextbb6 img {height: 25px; width: auto; cursor: pointer;}
+	
+
+/*구분선*/
+
+    @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { from, to { border-color: transparent } 
+      50% { border-color: white; } }
+
+    @keyframes mainbg{
+      0%{opacity: 0;}
+      90%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes start{
+      0%{opacity: 1;}
+      50%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes tbox{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+
+  @keyframes dip{
+       0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+  @keyframes dip2{
+      0%{ right: -40%;}
+      50%{ right: -37%;}
+      100%{right: -40%;}
+    }
+
+
+  /*챕터표시용*/
+  h1 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 30ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate;}
+  h3 { 
+  color: white;
+  border-right: .3em solid white;
+  width: 25ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3.3s steps(30, end),
+             blink-caret .5s step-end infinite alternate; }
+
+  h4 { 
+  color: white;
+  width: 80ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 3s steps(30, end),
+              step-end infinite alternate; z-index: 3;
+}
+  h5 { 
+  color:  white;
+   
+  width: 15ch;
+  margin: 2em 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  -webkit-animation: typing 1s steps(15, end),
+             step-end infinite alternate; z-index: 3;
+}
+  /**/
+
+
+</style> </head> 
+ 	<body>
+
+     <div id="box">
+     <iframe src="silence.mp3" allow="autoplay" id="audio/mpeg" style="display:none"></iframe>
+
+     <audio id="Mainbg">
+      <source src="./bgm/Master Disorder.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+     <audio id="Mainbg2">
+      <source src="./bgm/George Street Shuffle.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+
+      <audio id="opendoor">
+      <source src="./bgm/vol.18_Track_17.mp3" type="audio/mpeg" autoplay="true">
+     </audio>
+
+      <audio id="vip">
+      <source src="./bgm/vol.18_Track_5.wav" type="audio/wav"autoplay="true">
+     </audio>
+
+     <audio id="glitch">
+      <source src="./bgm/277053__doty21__glitch-sound-1.wav" type="audio/wav"autoplay="true">
+     </audio>
+
+     <audio id="barsory">
+      <source src="./bgm/구두 발자국-아스팔트.MP3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+
+      <audio id="android">
+      <source src="./bgm/vol.18_Track_14.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+      <audio id="marsory">
+      <source src="./bgm/카페 웅성웅성.mp3" type="audio/mpeg"autoplay="true" preload="auto">
+      </audio>
+      <audio id="paper">
+      <source src="./bgm/page-flip-2.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+      
+
+
+      <h4 id="outside">여긴...휴게실 같은건가? 쇼파나...이건 가정부 안드로이드 같은데.</h4>
+      <h4 id="outside1">일단 주변부터 살펴볼까.</h4>
+
+      <h4 id="brokeninside">(소파나...주변 깨진 물건들을 봐선 휴게실이 맞는 것 같다.<br><br>아까의 기록을 생각해보면 연구소 휴게실 비슷한걸지도.)</h4>
+
+      <h4 id="brokenmaptext">(상당히 훼손되어 있어서 확인하기 힘들어.)</h4>
+
+      <h4 id="brokenwindowtext">(다 무너진 건물들, 나뒹구는 잔해들. 저 거대한건 돔인가?)</h4>
+
+      <h4 id="miniroidtext">여기있었군. 이번에도 아까처럼 무언가를 보여주려나?</h4>
+      <h4 id="miniroidtext1">(직전의 장소와는 확연히 다른 분위기다. 과거의 일부인가?)</h4>
+
+      <h4 id="nwindowtext"> 와, 다 무너진 모습만 보다가 좀 놀랍네. 느낌 다른데?</h4>
+      <h4 id="nwindowtext1"> (확실히 이브의 풍경과 비슷해보인다.) </h4>
+
+      <h4 id="maptext">(아무래도 지금 이곳의 지도인 것 같다. 주변 자료와 함께 살펴보면 <br><br>대부분이 황폐화되어 살 수 있는 곳이 한정되어 보인다.)</h4>
+      <h4 id="maptext1">(이 검게 칠해진 부분은 뭐지?)</h4>
+
+      <h4 id="newstext">최근 알 수 없는 전염병이 돌고있다는 소식입니다.</h4>
+      <h4 id="newstext1">전염성은 매우 강하나 증상은 가벼운 두통을 동반한 기침 등 감기와 비슷하며<br><br>살상력은 매우 낮은 것으로 드러났습니다.</h4>
+      <h4 id="newstext2">국민 여러분께서는 외출을 자제해주시고 증상이 의심될 경우 근처 가까운<br><br>선별소에서 검사를 받아보시길 바랍......</h4>
+
+      <h4 id="peopletext">그 이야기 들었어? 바깥 구역 사람들 말이야. 또 폭동이 일어났었다며?</h4>
+      <h4 id="peopletext1">아, 그 쪽 사람들? 뭐겠어 돈 달란 소리겠지. 옷도 뭔 쓰레기장에서<br><br>주워입는 것 같더라? 전염병도 거기서 시작됐을걸?</h4>
+      <h4 id="peopletext2">윽, 더러운 놈들. 최소한 피해는 주지 말고 살아야 할 것 아냐.<br><br>걔네들은 평생 지들이 왜 거기서 사는지 모를걸?</h4>
+      <h4 id="peopletext3">바깥쪽 사람들...어쩐지 익숙한 느낌이다. 아마 돔이 채 다 씌워지지 못한<br><br>검게 칠해진 지역이 '바깥쪽' 을 뜻하는 걸까?</h4>
+      <h4 id="peopletext4">그나저나 계급별로 사람 나누는건 어딜가나 똑같네.<br><br>여기도 사람이 살던 곳이다 그건가.</h4>
+      <h4 id="peopletext5">!@$...%@#^...</h4>
+      <h4 id="peopletext6">(또다시 미니로이드가 움직이기 시작했다.)</h4>
+
+
+    <div id="mainstage">
+    <center>
+    <img src="./img/부서진휴게실.jpg">
+    </center>
+	</div>
+
+    <div id="mainstage2">
+    <img src="./img/휴게실.jpg">
+	</div>
+
+    <div id="brokenwindow">
+    <img src="./img/깨진 창문.png">
+  </div>
+    <div id="brokenmap">
+    <img src="./img/부서진 지도.png">
+  </div>
+    <div id="Bbrokenmap">
+    <img src="./img/깨진지도.png">
+  </div>
+    <div id="miniroid">
+    <img src="./img/미이니로이드.png">
+  </div>
+
+    <div id="Rminiroid">
+    <img src="./img/켜진미니로이드.png">
+  </div>
+    <div id="nwindow">
+    <img src="./img/창문창문.png">
+  </div>
+  <div id="news">
+    <img src="./img/뉴스.png">
+  </div>
+  <div id="people">
+    <img src="./img/두사람.png">
+  </div>
+   <div id="worldmap">
+    <img src="./img/지도.png">
+  </div>
+    <div id="Wworldmap">
+    <img src="./img/미국죽던가.png">
+  </div>
+
+  <div id="nwindowclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+  <div id="Nnwindowclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+    <div id="mapclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+    <div id="Mmapclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+
+    <div id="miniroidclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+
+
+  <div id="tvclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+    <div id="peopleclick">
+    <img src="./img/화살표(아래).png">
+    </div>
+
+     <div id="AAAstanding">
+        <img src="./img/A우주복(진지).png">
+    </div>
+    <div id="AAAstanding1">
+        <img src="./img/A우주복(평소).png">
+    </div>
+    <div id="AAAstanding2">
+        <img src="./img/AA우주복(진지).png">
+    </div>
+    <div id="AAAstanding3">
+        <img src="./img/AA우주복(평소).png">
+    </div>
+
+    <div id="Mminiroid">
+        <img src="./img/miniroidd.png">
+    </div>
+    <div id="Mminiroid1">
+        <img src="./img/miniroidd2.png">
+    </div>
+   
+    <div id="startbox">
+    <img src="./img/대화창(왼).png">
+    </div>
+
+    <div id="talk">
+    <img src="./img/대화창(오).png">
+  	</div>
+   	<div id="rtalk">
+    <img src="./img/대화창(왼).png">
+  	</div>
+  	<div id="Otalk">
+    <img src="./img/대화창(완).png">
+ 	 </div>
+
+
+ 	<div id="outsidebutton">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="outsidebutton1">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="brokeninsidebb">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="brokenwindowtextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="brokenmaptextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="miniroidtextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="miniroidtextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="nwindowtextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="nwindowtextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="maptextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="maptextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="newstextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="newstextbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+
+    <div id="peopletextbb">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb1">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb2">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb3">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb4">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb5">
+    <img src="./img/버튼(오).png">
+    </div>
+    <div id="peopletextbb6">
+    <a href="5.html"><img src="./img/버튼(오).png">
+    </div></a>
+
+     </div>
+
+     <script type="text/javascript">
+
+     	  
+      var toggle = "off";
+      var clickNumber = 0;
+      outsidebutton.onclick = function(){
+      Mainbg.play();
+      barsory.play();
+      toggle = "on";
+      outside.style.display = "none";
+      outsidebutton.style.display = "none";
+      outside1.style.display = "inline";
+      outsidebutton1.style.display = "inline";
+   
+    }
+
+      outsidebutton1.onclick = function(){
+      toggle = "on";
+      vip.play();
+      outside1.style.display = "none";
+      outsidebutton1.style.display = "none";
+      startbox.style.display = "none";
+      AAAstanding.style.display = "none";
+      nwindowclick.style.display = "inline";
+      mapclick.style.display = "inline";
+      miniroidclick.style.display = "inline";
+    }
+
+
+      mainstage.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      AAAstanding1.style.display = "inline";
+      rtalk.style.display = "inline";
+      brokeninside.style.display = "inline";
+      brokeninsidebb.style.display = "inline";
+    }
+      brokeninsidebb.onclick = function(){
+      toggle = "on";
+      AAAstanding1.style.display = "none";
+      rtalk.style.display = "none";
+      brokeninside.style.display = "none";
+      brokeninsidebb.style.display = "none";
+    }
+
+      nwindowclick.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      AAAstanding1.style.display = "inline";
+      rtalk.style.display = "inline";
+      brokenwindowtext.style.display = "inline";
+      brokenwindowtextbb.style.display = "inline";
+    }
+
+      brokenwindow.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      AAAstanding1.style.display = "inline";
+      rtalk.style.display = "inline";
+      brokenwindowtext.style.display = "inline";
+      brokenwindowtextbb.style.display = "inline";
+    }
+      brokenwindowtextbb.onclick = function(){
+      toggle = "on";
+      rtalk.style.display = "none";
+      AAAstanding1.style.display = "none";
+      brokenwindowtext.style.display = "none";
+      brokenwindowtextbb.style.display = "none";
+      nwindowclick.style.display = "none";
+    }
+      mapclick.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      AAAstanding.style.display = "inline";
+      rtalk.style.display = "inline";
+      Bbrokenmap.style.display = "inline";
+      brokenmaptext.style.display = "inline";
+      brokenmaptextbb.style.display = "inline";
+    }
+      brokenmap.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      AAAstanding.style.display = "inline";
+      rtalk.style.display = "inline";
+      Bbrokenmap.style.display = "inline";
+      brokenmaptext.style.display = "inline";
+      brokenmaptextbb.style.display = "inline";
+    }
+      brokenmaptextbb.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      AAAstanding.style.display = "none";
+      rtalk.style.display = "none";
+      Bbrokenmap.style.display = "none";
+      brokenmaptext.style.display = "none";
+      brokenmaptextbb.style.display = "none";
+      mapclick.style.display = "none";
+    }
+
+      miniroidclick.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      android.play();
+      miniroidclick.style.display = "none"
+      AAAstanding.style.display = "inline";
+      rtalk.style.display = "inline";
+      miniroidtext.style.display = "inline";
+      miniroidtextbb.style.display = "inline";
+    }
+    
+      miniroid.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      android.play();
+      miniroidclick.style.display = "none"
+      AAAstanding.style.display = "inline";
+      rtalk.style.display = "inline";
+      miniroidtext.style.display = "inline";
+      miniroidtextbb.style.display = "inline";
+    }
+      miniroidtextbb.onclick = function(){
+      toggle = "on";
+      vip.play();
+      Mainbg.pause();
+      Mainbg2.play();
+      miniroidtext.style.display = "none";
+      miniroidtextbb.style.display = "none";
+      miniroid.style.display = "none";
+      miniroidtext1.style.display = "none";
+      miniroidtextbb1.style.display = "none";
+      mainstage.style.display = "none";
+      brokenwindow.style.display = "none";
+      brokenmap.style.display = "none";
+      Rminiroid.style.display = "inline";
+      miniroidtext1.style.display = "inline";
+      miniroidtextbb1.style.display = "inline";
+      mainstage2.style.display = "inline";
+      nwindow.style.display = "inline";
+      worldmap.style.display = "inline";
+      news.style.display = "inline";
+      people.style.display = "inline";
+    }
+      miniroidtextbb1.onclick = function(){
+      toggle = "on";
+      vip.play();
+      miniroidtext1.style.display = "none";
+      miniroidtextbb1.style.display = "none";
+      AAAstanding.style.display = "none";
+      rtalk.style.display = "none";
+      nwindowclick.style.display = "none";
+      mapclick.style.display = "none";
+      miniroidclick.style.display = "none";
+      Mmapclick.style.display = "inline";
+      Nnwindowclick.style.display = "inline";
+      tvclick.style.display = "inline";
+    }
+      
+
+    /*이 다음부턴 평화로운 휴게실 조사파트 코딩하시면 됩니다.*/
+    /*평화로운 휴게실 창문.*/
+      Nnwindowclick.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      rtalk.style.display = "inline";
+      nwindowtext.style.display = "inline";
+      nwindowtextbb.style.display = "inline";
+     }
+
+      nwindow.onclick = function(){
+      toggle = "on";
+      barsory.play();
+      rtalk.style.display = "inline";
+      nwindowtext.style.display = "inline";
+      nwindowtextbb.style.display = "inline";
+     }
+      nwindowtextbb.onclick = function(){
+      toggle = "on";
+      vip.play();
+      nwindowtext.style.display = "none";
+      nwindowtextbb.style.display = "none";
+      nwindowtext1.style.display = "inline";
+      nwindowtextbb1.style.display = "inline";
+     }
+      nwindowtextbb1.onclick = function(){
+      toggle = "on";
+      vip.play();
+      rtalk.style.display = "none";
+      nwindowtext1.style.display = "none";
+      nwindowtextbb1.style.display = "none";
+      Nnwindowclick.style.display = "none";
+     }
+
+/*평화로운 휴게실 지도.*/
+      Mmapclick.onclick = function(){
+      toggle = "on";
+      paper.play();
+      AAAstanding1.style.display = "inline";
+      Wworldmap.style.display = "inline";
+      rtalk.style.display = "inline";
+      maptext.style.display = "inline";
+      maptextbb.style.display = "inline";
+
+   }
+
+      worldmap.onclick = function(){
+      toggle = "on";
+      paper.play();
+      AAAstanding1.style.display = "inline";
+      Wworldmap.style.display = "inline";
+      rtalk.style.display = "inline";
+      maptext.style.display = "inline";
+      maptextbb.style.display = "inline";
+
+	 }
+	  maptextbb.onclick = function(){
+      toggle = "on";
+      paper.pause();
+      maptext.style.display = "none";
+      maptextbb.style.display = "none";
+      maptext1.style.display = "inline";
+      maptextbb1.style.display = "inline";
+	 }
+	  maptextbb1.onclick = function(){
+      toggle = "on";
+      paper.play();
+      rtalk.style.display = "none";
+      AAAstanding1.style.display = "none";
+      Wworldmap.style.display = "none";
+      maptext1.style.display = "none";
+      maptextbb1.style.display = "none";
+      Mmapclick.style.display = "none";
+      peopleclick.style.display = "inline";
+	 }
+
+/*평화로운 휴게실 뉴스.*/
+      tvclick.onclick = function(){
+      toggle = "on";
+      vip.play();
+      Otalk.style.display = "inline";
+      newstext.style.display = "inline";
+      newstextbb.style.display = "inline";
+    }
+
+      news.onclick = function(){
+      toggle = "on";
+      vip.play();
+      Otalk.style.display = "inline";
+      newstext.style.display = "inline";
+      newstextbb.style.display = "inline";
+    }
+      newstextbb.onclick = function(){
+      toggle = "on";
+      vip.play();
+      newstext.style.display = "none";
+      newstextbb.style.display = "none";
+      newstext1.style.display = "inline";
+      newstextbb1.style.display = "inline";
+    }
+      newstextbb1.onclick = function(){
+      toggle = "on";
+      vip.play();
+      newstext1.style.display = "none";
+      newstextbb1.style.display = "none";
+      newstext2.style.display = "inline";
+      newstextbb2.style.display = "inline";
+    }
+      newstextbb2.onclick = function(){
+      toggle = "on";
+      vip.play();
+      Otalk.style.display = "none";
+      newstext2.style.display = "none";
+      newstextbb2.style.display = "none";
+      tvclick.style.display = "none"; 
+    }
+
+/*평화로운 휴게실 사람들 대화.*/
+      peopleclick.onclick = function(){
+      toggle = "on";
+      marsory.play();
+      peopleclick.style.display = "none";
+      Otalk.style.display = "inline";
+      peopletext.style.display = "inline";
+      peopletextbb.style.display = "inline";
+    }
+
+      people.onclick = function(){
+      toggle = "on";
+      marsory.play();
+      peopleclick.style.display = "none";
+      Otalk.style.display = "inline";
+      peopletext.style.display = "inline";
+      peopletextbb.style.display = "inline";
+    }
+      peopletextbb.onclick = function(){
+      toggle = "on";
+      peopletext.style.display = "none";
+      peopletextbb.style.display = "none";
+      peopletext1.style.display = "inline";
+      peopletextbb1.style.display = "inline";
+    }
+      peopletextbb1.onclick = function(){
+      toggle = "on";
+      peopletext1.style.display = "none";
+      peopletextbb1.style.display = "none";
+      peopletext2.style.display = "inline";
+      peopletextbb2.style.display = "inline";
+    }
+
+      peopletextbb2.onclick = function(){
+      toggle = "on";
+      marsory.pause();
+      peopletext2.style.display = "none";
+      peopletextbb2.style.display = "none";
+      Otalk.style.display = "none";
+      AAAstanding.style.display = "inline";
+      rtalk.style.display = "inline";
+      Mainbg.play();
+      Mainbg2.pause();
+      mainstage2.style.display = "none";
+      news.style.display = "none";
+      people.style.display = "none";
+      nwindow.style.display = "none";
+      worldmap.style.display = "none";
+      nwindowclick.style.display = "none";
+      mapclick.style.display = "none";
+      miniroidclick.style.display = "none";
+      Mmapclick.style.display = "none";
+      Nnwindowclick.style.display = "none";
+      tvclick.style.display = "none";
+      mainstage.style.display = "inline";
+      brokenwindow.style.display = "inline";
+      brokenmap.style.display = "inline";
+      peopletext3.style.display = "inline";
+      peopletextbb3.style.display = "inline";
+    }
+      peopletextbb3.onclick = function(){
+      toggle = "on";
+      vip.play();
+      peopletext3.style.display = "none";
+      peopletextbb3.style.display = "none";
+      peopletext4.style.display = "inline";
+      peopletextbb4.style.display = "inline";
+    }
+      peopletextbb4.onclick = function(){
+      toggle = "on";
+      vip.pause();
+      glitch.play();
+      peopletext4.style.display = "none";
+      peopletextbb4.style.display = "none";
+      rtalk.style.display = "none";
+      AAAstanding.style.display = "none";
+      AAAstanding2.style.display = "inline";
+      Otalk.style.display = "inline";
+      Mminiroid.style.display = "inline";
+      peopletext5.style.display = "inline";
+      peopletextbb5.style.display = "inline";
+    }
+      peopletextbb5.onclick = function(){
+      toggle = "on";
+      vip.play();
+      glitch.pause();
+      peopletext5.style.display = "none";
+      peopletextbb5.style.display = "none";
+      Otalk.style.display = "none";
+      Mminiroid.style.display ="none";
+      Mminiroid1.style.display = "inline";
+      AAAstanding2.style.display = "none";
+      AAAstanding.style.display = "inline";
+      rtalk.style.display = "inline";
+      peopletext6.style.display = "inline";
+      peopletextbb6.style.display = "inline";
+    }
+
+
+     </script>
+
+     </body>
+     </html>

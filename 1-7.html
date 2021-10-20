@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Loding...</title>
+		<style type="text/css">
+		html{background-color: #000000; }
+		body,div, p, section, button {padding: 0; margin: 0; }
+
+		@font-face { font-family: "neo"; src: url("./img/neodgm_code.ttf");}
+
+		html,body,button {margin: 0; padding: 0; font-family: "neo";}	
+		p{padding: 10px;}
+
+      p.typing-txt{position:relative; display: inline-block; height: 15px; overflow: hidden; animation: typingAni 2s 0s steps(35, end) 1;
+      	  animation-fill-mode: forwards;}
+
+      p.typing-txt2{position:relative; display: inline-block; height: 15px; overflow: hidden; animation: typingAni 2s 1s steps(35, end) 1;
+      	  animation-fill-mode: forwards;}
+
+      p.typing-txt3{position:relative; display: inline-block; height: 15px; overflow: hidden; animation: typingAni2 1.5s 2.2s steps(35, end) 1;
+      	  animation-fill-mode: forwards;}
+
+      p.typing-txt3::after{position:absolute; display:block;  content:""; width: 20px; height: 20px;top :10px;right:0; border-right: 3px solid ; animation: cursor 0.5s 2s step-end infinite;}
+
+      button {border: 1px solid white; border-radius: 10px; text-align: center; width: 100px; background-color: black; padding: 5px; font-size: 1em; cursor: pointer; }
+
+      footer{background: black;  font-family: "neo" margin-top: 220px; margin-bottom: 40px; color: white; text-align: center;padding: 15;}
+
+      
+	  @keyframes typingAni {
+ 		 0%{width:0%; color: black;}
+  		20%{color: white;}
+  		100%{width: 600px;  color: white;};
+  	}
+
+  	 @keyframes typingAni2 {
+  		0%{width:0%; color: black;}
+  		20%{color: white;}
+  		100%{width: 255px;  color: white;};
+			}
+
+      @keyframes cursor{
+  		0%{ color: black;}
+  		50%{color: white;}
+  		100%{color: black;};
+		}
+
+     </style> </head> 
+
+
+     <body>
+
+
+       <audio id="typss">
+      <source src="cursor_style_2.wav" type="audio/wav"autoplay="true" preload="auto">
+      </audio>
+
+       <audio id="shorttyp">
+      <source src="./img/typewriter-key-1.mp3" type="audio/mpeg">
+      </audio>
+
+     	<section style="  top: 40%; position: fixed; left: 40%; font-size: 1.5em;">	
+
+     	<div>
+     		<p class="typing-txt"> 안들려? 야, A ...! </p> </div>
+     
+     	</section>
+
+     	<div style="position: absolute; top: 58%; left: 45%; font-size: 1.2vw; line-height: 1.8;">
+
+		<button type="button" onclick="location.href='2.html'" ><a href="2.html" style="color: white; text-decoration: none;"> ... </a> </button> 
+	</div>	
+
+		<script type="text/javascript">
+
+    		var bgPlay = 0;
+    		bgPlay++;
+       		 window.onmousemove = function(){
+       		 if(bgPlay == 1){typss.play(); }
+         	}
+       </script>
+       
+     </body>
+     </html>
